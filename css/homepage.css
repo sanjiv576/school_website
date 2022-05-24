@@ -1,0 +1,263 @@
+/* for responsive header */
+.header-text {
+    font-size: 14px;
+    text-align: left;
+
+}
+
+.header-row .header-text,
+.header-row .header-btn {
+    padding-top: 25px;
+}
+
+.header-row .header-btn {
+    text-align: rightrgb(59, 62, 62);
+    
+}
+
+.header-row .header-btn>button:hover {
+    background-color: rgb(65, 70, 223);
+    font-weight: bold;
+}
+
+.schoolLogo {
+    height: 66px;
+    width: 311px;
+}
+.dropdown-menu a:hover {
+    background-color: blueviolet;
+    color:white;
+    
+}
+.dropdown-menu {
+    z-index: 99999 !important;
+}
+
+/* for desktop */
+@media only screen and (min-width:1025px) {
+    .header-row-show {display:none;}
+    
+}
+
+/* for mobiles and tablets */
+@media only screen and (max-width:1025px){
+    header{display: none;}
+    .header-row-show {visibility: visible !important; }
+    #makeCarousel img {height: 300px !important;}
+}
+
+/* responsive size of carousel images */
+@media only screen and (min-width:992px){
+    #makeCarousel img {height: 450px !important;}
+    
+}
+
+@media only screen and (max-width:576px){
+    .img-content img {
+        height: 250px !important;
+    }
+}
+
+/* for responsive Nav bar */
+.navbar {
+    background-color: #696363;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+
+.navbar-nav > .navbar-item {
+    font-size: 23px;
+    
+}
+.navbar-collapse, .navbar {
+    vertical-align: top;
+    text-align: center;
+}
+/* custom color in active link */
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+    transition: transform .3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #413F42 !important;
+    color: white !important;
+    font-size: 25px;
+    z-index: 12px;
+    transform: scale(0.75);
+}
+
+
+
+
+.navbar-dark .navbar-nav .nav-link.active {
+    font-size: 23px !important;
+    background-color: #04AA6D !important;
+    
+    
+}
+ul {
+    margin:auto;
+}
+ul li {
+    padding-left: 30px;
+}
+
+/* For scroll indicator */
+
+.progress-container {
+    width: 100%;
+    height: 7px;
+    background: #ccc;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+      
+  }
+  .progress-bar {
+    height: 7px;
+    width: 0%;
+  }
+
+/* for shrinking navabar */
+  .primary-nav {
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+ }
+
+ .shrink {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 50px !important;
+   
+}
+
+.shrink .navbar-brand {
+    height: 0 !important;
+    line-height: 0 !important;
+}
+
+.shrink a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;       
+}
+
+
+/* for slider images */
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 970%;
+  margin: auto;
+}
+
+#makeCarousel img {
+    height: 600px;
+    width:100%;
+    object-fit: cover;
+}
+.imgTitle {
+    border-radius: 14px;
+    background-color: #413F42;
+    color:white;
+    display:inline-block;
+}
+.imgDescp {
+    border-radius:13px;
+    background-color:white;
+    font-weight: bolder;
+    color: black;
+}
+marquee h2{
+    animation-name: img-title;
+    animation-duration: 6.9s;
+
+}
+@keyframes img-title {
+    0%   {color: white; background-color: black;}
+    25%  {color: black; background-color: white;}
+    50%  {color: blue; background-color: grey;}
+    100% {color: green; background-color: whitesmoke;}
+}
+/* .changeColor {
+    color: blue !important;
+    background-color: red !important;
+} */
+/* 
+.carousel-caption {
+    position: absolute;
+    z-index: 1;
+    display:table;
+    left:4;
+    bottom:10;
+    width:100%;
+    height:100%;
+}
+
+.carousel-caption p {
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
+}
+
+.trickcenter {
+    position: relative;
+    
+    transform: translate(-50%, -50%);
+} */
+
+
+
+/* introduction and notice body */
+.introduction-notice {
+    margin-top: 10px;
+}
+.introduction-content {
+    background-color: #04AA6D;
+    height:800px;
+}
+.introduction-content h2 {
+    
+    padding:10px;
+    text-transform: capitalize;
+}
+/* for image */
+.img-content img{
+    height:400px;
+    width: 100%;
+}
+/* for introduction */
+.intro-content {
+    background-color: pink;
+    border-radius: 14px;
+    height: 300px;
+    padding-top:5px;
+    
+}
+
+.intro-content-top p {
+    background-color: #534e4e;
+    color: white;
+    font-size: 16px;
+    height: 200px;
+    padding:20px;
+    text-align: justify;
+    
+    white-space: nowrap; 
+    
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.notice-content {
+    background-color: blue;
+    height:800px;
+}
+/* main body container */
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
