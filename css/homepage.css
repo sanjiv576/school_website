@@ -211,26 +211,38 @@ marquee h2{
 
 
 /* introduction and notice body */
+
 .introduction-notice {
     margin-top: 10px;
 }
 .introduction-content {
-    background-color: #04AA6D;
+    background-color: green;
     height:800px;
+}
+
+.introduction-main-content {
+    background-color: wheat;
+    border-radius: 18px;
+    margin: 3% 3% 5% 3%;
+    width: 94%;
+    height: 96%;
 }
 .introduction-content h2 {
     
     padding:10px;
     text-transform: capitalize;
 }
+
+
 /* for image */
 .img-content img{
     height:400px;
     width: 100%;
 }
 /* for introduction */
+
 .intro-content {
-    background-color: pink;
+    /* background-color: pink; */
     border-radius: 14px;
     height: 300px;
     padding-top:5px;
@@ -251,9 +263,31 @@ marquee h2{
     text-overflow: ellipsis; 
 }
 
+
+/* read more button */
+.intro-content-button a {
+    float: right;
+    margin-right: 15px;
+    
+}
+
+
+.intro-content hr {
+    border: 3px solid rgb(0, 0, 0);
+}
+
+
 .notice-content {
     background-color: blue;
     height:800px;
+}
+
+.notice-main-content {
+    background-color: pink;
+    border-radius: 19px;
+    margin: 3% 3% 3% 3%;
+    height: 96%;
+
 }
 /* main body container */
 .container-fluid {
