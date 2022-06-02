@@ -215,18 +215,20 @@ marquee h2{
 .introduction-notice {
     margin-top: 10px;
 }
-.introduction-content {
+/* .introduction-content {
     background-color: green;
     height:800px;
-}
+} */
 
 .introduction-main-content {
-    background-color: wheat;
+    background-color: #F4D2D2;
     border-radius: 18px;
     margin: 3% 3% 5% 3%;
     width: 94%;
     height: 96%;
 }
+
+
 .introduction-content h2 {
     
     padding:10px;
@@ -277,18 +279,95 @@ marquee h2{
 }
 
 
+/* for notice content */
 .notice-content {
-    background-color: blue;
-    height:800px;
+    /* background-color: blue; */
+    height:600px;
 }
-
+.all-notice-content {
+    overflow: scroll;
+    height: 80%;
+}
 .notice-main-content {
-    background-color: pink;
-    border-radius: 19px;
+    background-color: #F4D2D2;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
     margin: 3% 3% 3% 3%;
     height: 96%;
+    
+}
+.notice-button-section {
+    height: 4%;
+    padding: 13px;
+}
+
+.notice-announcement {
+    background-color: #0B4DAF;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
 
 }
+
+.notice-body {
+    /* background-color: red; */
+    border-bottom: solid;
+    display: flex;
+    margin-top: 15px;
+    height: 150px;
+}
+/* left side notice image */
+.notice-img-content {
+    /* background-color: purple; */
+    width: 30%;
+    height: 100%;
+}
+
+.notice-img {
+    /* background-color: #04AA6D;
+    border-radius: 30px; */
+    height: 90%;
+    width: 80%;
+    margin: 0 auto 0 auto ;
+   
+}
+.notice-img a img {
+    /* border-radius: 30px; */
+    margin-top: 4%;
+    height: 100%;
+    width: 100%;
+}
+
+/* right side notice content */
+.notice-body-content {
+    /* background-color: grey; */
+    padding: 10px;
+    height: 100%;
+    width: 70%;
+}
+.notice-title a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.notice-publish-date > p{
+    color:#413F42
+}
+
+.notice-info > p{
+    color: black;
+}
+
+
+/*  vision-philosophy-mission content*/
+
+.vision-philosophy-mission{
+    background-color: green;
+    height: 200px;
+}
+
 /* main body container */
 .container-fluid {
     padding-left: 0 !important;
