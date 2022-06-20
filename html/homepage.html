@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="KEBS School" content="One of the best schools in Manthali, Ramechhap.">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>KEBS School | Home</title>
   <!-- adds favicon -->
   <link rel="icon" type="icon/png" href="../images/kebsLogo.png">
@@ -22,6 +22,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -69,8 +73,54 @@
               class="img-fluid float-left d-block schoolLogo" /></a>
         </div>
         <div class="col-lg-2 header-btn">
-          <button class="btn btn-dark btn-hover" type="button">Login</button>
+          <button class="btn btn-dark btn-hover" type="button" data-toggle="modal"
+            data-target="#popLogin">Login</button>
+          <!-- <button class="btn btn-dark loginBtn" type="button">Login</button> -->
           <button class="btn btn-dark" type="button">Signup</button>
+
+
+          <!-- second attempt of responsive modal -->
+          <!-- <div class="myModal">
+            <div class="myCard">
+              <i class="uil uil-multiply" id="close"></i>
+              <div class="myBrand">
+                <img src="../images/login_user_128.png" alt="">
+              </div>
+              <div class="main-info">
+                <h3 class="uppercase">Login</h3>
+                <form action="">
+                  <input type="email" placeholder="Username" />
+                  <input type="password" placeholder="Password" />
+                  <input type="submit" value="logi" />
+                </form>
+              </div>
+            </div>
+          </div> -->
+
+
+
+          <!-- login modal this does not work in mobile-->
+          <!-- <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                   
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
         </div>
       </div>
     </header>
@@ -94,8 +144,63 @@
           </button>
 
           <div class="dropdown-menu" id="dropdownAccount">
-            <a href="" class="dropdown-item">Login</a>
+            <!-- <a href="" class="dropdown-item" data-toggle="modal" data-target="#popLogin">Login</a> -->
+            <!-- <button class="dropdown-item", data-toggle="modal", data-target="#popLogin">Login</button> -->
+            <!-- <button class="btn btn-dark btn-hover" type="button" data-toggle="modal"
+            data-target="#popLogin">Login</button> -->
+            <a type="button" class="dropdown-item" data-toggle="modal" data-target="#popLogin">
+              Login
+            </a>
             <a href="" class="dropdown-item">Signup</a>
+
+            <!-- login modal -->
+            <!-- <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+              aria-hidden="true">
+              <div class="modal-dialog modal-fullscreen-sm-down modal-xl" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                     
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+
+
+
+
+
 
           </div>
         </div>
@@ -423,11 +528,95 @@
   </div>
   </section>
 
+  <!-- modal for Login UI -->
+<section>
+  <!-- Modal for login-->
+  <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>User Login Panel</h3>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="myCard">
+          <!-- <i class="uil uil-multiply" id="close"></i> -->
+          <div class="myBrand">
+            <!-- <img src="../images/login_user_128.png" alt=""> -->
+
+          </div>
+          <div class="main-info">
+
+            <div class="login-info">
+              <form action="">
+
+
+                <div class="form-group ">
+                  <!-- <input type="email" placeholder="Username" />
+                <br>
+                <input type="password" placeholder="Password" />
+                <br> -->
+                  <!-- <input type="submit" value="Login" /> -->
+
+                  <div class="input-group">
+                    <div class="input-group-icons">
+                      <i class="fa-solid fa-user fa-lg fa-xl fa-xm fa-xs"></i>
+                    </div>
+                    <input class="form-control" id="email" name="email" type="text" placeholder="Username" />
+                  </div>
+                  
+                  <div class="input-group">
+                    <div class="input-group-icons">
+                      <i class="fa-solid fa-user fa-lg fa-xl fa-xm fa-xs"></i>
+                    </div>
+                    <input class="form-control" id="password" name="password" type="password" placeholder="Password" />
+
+                    <div class="showPassword">
+                      <button class="btn"><i class="fa-solid fa-eye fa-lg fa-xl fa-xm fa-xs"></i></button>
+                      <!-- <i class="fa-solid fa-user fa-lg fa-xl fa-xm fa-xs"></i> -->
+                      
+                    </div>
+                  </div>
+
+                  
+
+
+                </div>
+
+
+              </form>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+</section>
   <section>
     <div class="vision-philosophy-mission">
       <h1>here goes sth</h1>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popLogin">
+        Launch demo modal
+      </button>
+
     </div>
+
+
   </section>
 
   </div>
