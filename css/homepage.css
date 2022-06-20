@@ -12,7 +12,7 @@
 
 .header-row .header-btn {
     text-align: rightrgb(59, 62, 62);
-    
+
 }
 
 .header-row .header-btn>button:hover {
@@ -24,35 +24,49 @@
     height: 66px;
     width: 311px;
 }
+
 .dropdown-menu a:hover {
     background-color: blueviolet;
-    color:white;
-    
+    color: white;
+
 }
+
 .dropdown-menu {
     z-index: 99999 !important;
 }
 
 /* for desktop */
 @media only screen and (min-width:1025px) {
-    .header-row-show {display:none;}
-    
+    .header-row-show {
+        display: none;
+    }
+
 }
 
 /* for mobiles and tablets */
-@media only screen and (max-width:1025px){
-    header{display: none;}
-    .header-row-show {visibility: visible !important; }
-    #makeCarousel img {height: 300px !important;}
+@media only screen and (max-width:1025px) {
+    header {
+        display: none;
+    }
+
+    .header-row-show {
+        visibility: visible !important;
+    }
+
+    #makeCarousel img {
+        height: 300px !important;
+    }
 }
 
 /* responsive size of carousel images */
-@media only screen and (min-width:992px){
-    #makeCarousel img {height: 450px !important;}
-    
+@media only screen and (min-width:992px) {
+    #makeCarousel img {
+        height: 450px !important;
+    }
+
 }
 
-@media only screen and (max-width:576px){
+@media only screen and (max-width:576px) {
     .img-content img {
         height: 250px !important;
     }
@@ -66,14 +80,17 @@
 }
 
 
-.navbar-nav > .navbar-item {
+.navbar-nav>.navbar-item {
     font-size: 23px;
-    
+
 }
-.navbar-collapse, .navbar {
+
+.navbar-collapse,
+.navbar {
     vertical-align: top;
     text-align: center;
 }
+
 /* custom color in active link */
 
 .navbar-dark .navbar-nav .nav-link {
@@ -95,12 +112,14 @@
 .navbar-dark .navbar-nav .nav-link.active {
     font-size: 23px !important;
     background-color: #04AA6D !important;
-    
-    
+
+
 }
+
 ul {
-    margin:auto;
+    margin: auto;
 }
+
 ul li {
     padding-left: 30px;
 }
@@ -114,25 +133,26 @@ ul li {
     position: fixed;
     left: 0;
     bottom: 0;
-      
-  }
-  .progress-bar {
+
+}
+
+.progress-bar {
     height: 7px;
     width: 0%;
-  }
+}
 
 /* for shrinking navabar */
-  .primary-nav {
+.primary-nav {
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
- }
+}
 
- .shrink {
+.shrink {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     min-height: 50px !important;
-   
+
 }
 
 .shrink .navbar-brand {
@@ -142,45 +162,65 @@ ul li {
 
 .shrink a {
     padding-top: 0 !important;
-    padding-bottom: 0 !important;       
+    padding-bottom: 0 !important;
 }
 
 
 /* for slider images */
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  width: 970%;
-  margin: auto;
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    width: 970%;
+    margin: auto;
 }
 
 #makeCarousel img {
     height: 600px;
-    width:100%;
+    width: 100%;
     object-fit: cover;
 }
+
 .imgTitle {
     border-radius: 14px;
     background-color: #413F42;
-    color:white;
-    display:inline-block;
+    color: white;
+    display: inline-block;
 }
+
 .imgDescp {
-    border-radius:13px;
-    background-color:white;
+    border-radius: 13px;
+    background-color: white;
     font-weight: bolder;
     color: black;
 }
-marquee h2{
+
+marquee h2 {
     animation-name: img-title;
     animation-duration: 6.9s;
 
 }
+
 @keyframes img-title {
-    0%   {color: white; background-color: black;}
-    25%  {color: black; background-color: white;}
-    50%  {color: blue; background-color: grey;}
-    100% {color: green; background-color: whitesmoke;}
+    0% {
+        color: white;
+        background-color: black;
+    }
+
+    25% {
+        color: black;
+        background-color: white;
+    }
+
+    50% {
+        color: blue;
+        background-color: grey;
+    }
+
+    100% {
+        color: green;
+        background-color: whitesmoke;
+    }
 }
+
 /* .changeColor {
     color: blue !important;
     background-color: red !important;
@@ -215,6 +255,7 @@ marquee h2{
 .introduction-notice {
     margin-top: 10px;
 }
+
 /* .introduction-content {
     background-color: green;
     height:800px;
@@ -230,25 +271,26 @@ marquee h2{
 
 
 .introduction-content h2 {
-    
-    padding:10px;
+
+    padding: 10px;
     text-transform: capitalize;
 }
 
 
 /* for image */
-.img-content img{
-    height:400px;
+.img-content img {
+    height: 400px;
     width: 100%;
 }
+
 /* for introduction */
 
 .intro-content {
     /* background-color: pink; */
     border-radius: 14px;
     height: 300px;
-    padding-top:5px;
-    
+    padding-top: 5px;
+
 }
 
 .intro-content-top p {
@@ -256,13 +298,13 @@ marquee h2{
     color: white;
     font-size: 16px;
     height: 200px;
-    padding:20px;
+    padding: 20px;
     text-align: justify;
-    
-    white-space: nowrap; 
-    
+
+    white-space: nowrap;
+
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 
@@ -270,7 +312,7 @@ marquee h2{
 .intro-content-button a {
     float: right;
     margin-right: 15px;
-    
+
 }
 
 
@@ -282,20 +324,23 @@ marquee h2{
 /* for notice content */
 .notice-content {
     /* background-color: blue; */
-    height:600px;
+    height: 600px;
 }
+
 .all-notice-content {
     overflow: scroll;
     height: 80%;
 }
+
 .notice-main-content {
     background-color: #F4D2D2;
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
     margin: 3% 3% 3% 3%;
     height: 96%;
-    
+
 }
+
 .notice-button-section {
     height: 4%;
     padding: 13px;
@@ -317,6 +362,7 @@ marquee h2{
     margin-top: 15px;
     height: 150px;
 }
+
 /* left side notice image */
 .notice-img-content {
     /* background-color: purple; */
@@ -329,9 +375,10 @@ marquee h2{
     border-radius: 30px; */
     height: 90%;
     width: 80%;
-    margin: 0 auto 0 auto ;
-   
+    margin: 0 auto 0 auto;
+
 }
+
 .notice-img a img {
     /* border-radius: 30px; */
     margin-top: 4%;
@@ -346,24 +393,25 @@ marquee h2{
     height: 100%;
     width: 70%;
 }
+
 .notice-title a {
     color: black;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.notice-publish-date > p{
-    color:#413F42
+.notice-publish-date>p {
+    color: #413F42
 }
 
-.notice-info > p{
+.notice-info>p {
     color: black;
 }
 
 
 /*  vision-philosophy-mission content*/
 
-.vision-philosophy-mission{
+.vision-philosophy-mission {
     background-color: green;
     height: 200px;
 }
@@ -374,3 +422,209 @@ marquee h2{
     padding-right: 0 !important;
 }
 
+/* for login */
+
+/* .myModal {
+    width: 100%;
+    height: 400px;
+    position: fixed;
+    display: grid;
+    display: none;
+    place-items: center;
+    background-color: peru;
+} */
+
+.myCard {
+    background-color: peru;
+    width: 90%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    /* padding: 3rem; */
+    margin: auto;
+    /* position: relative; */
+}
+
+.modal-header h3 {
+    /* display: block !important; */
+    color: rgb(65, 70, 223) !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    /* text-align: center !important; */
+
+}
+
+
+
+/* #close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.3rem;
+} */
+
+.myBrand {
+    width: 55%;
+    height: 100%;
+    background-color: pink;
+    background-image: url("../videos/login-security.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.main-info {
+    width: 45%;
+    height: 100%;
+    display: flex;
+
+    background: linear-gradient(0deg,
+            rgb(69, 80, 235) 0%,
+            rgb(66, 123, 202) 50%,
+            rgb(146, 164, 165) 100%);
+    color: var(--clr-gray-dark);
+}
+
+#brand img {
+    display: block;
+    /* width: 100%; */
+}
+
+
+.login-info {
+    background-color: grey;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    height: 98%;
+}
+
+.input-group-icons {
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 10px;
+    vertical-align: auto;
+}
+.input-group {
+    margin-bottom: 1rem !important;
+}
+.input-group input{
+    background: rgb(45, 36, 36) !important;
+    border-radius: 12px;
+    color: white !important;
+    
+}
+.myCard form {
+    margin-top: 2rem;
+    
+    /* width: 100%; */
+    /* display: flex; */
+    justify-content: space-between;
+}
+.fa-eye {
+    
+    color: white !important;
+    vertical-align: auto !important;
+
+}
+/* .myCard input[type="email"],
+.myCard input[type="password"] {
+    background-color: #eee;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+}
+
+.myCard input[type="submit"] {
+    background-color: rgb(171, 81, 81);
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    color: white;
+} */
+
+
+/* show password section */
+.showPassword {
+    background-color: black;
+    color: white;
+}
+.showPassword  button {
+    /* border: none; */
+    border-radius: 12px !important;
+    cursor: pointer;
+}
+/* responsive media query */
+
+@media screen and (max-width: 992px) {
+    .myCard {
+        flex-direction: column;
+        width: 88%;
+        text-align: center;
+    }
+
+    .myBrand {
+        /* width: 60%; */
+        /* background-image: url("../images/login_user_128.png"); */
+        /* height: 15rem; */
+        /* background-image: url("https://cdn-icons-png.flaticon.com/512/3014/3014261.png");
+        height: 40%;
+        width: 40%; */
+        /* height:40%; */
+        border-radius: 12%;
+        overflow: hidden;
+        margin-top: 0.5rem;
+    }
+
+
+    .myCard form {
+        display: block;
+        
+    }
+
+    /* .myCard input[type="email"],
+    .myCard input[type="email"]::placeholder {
+        text-align: center;
+        place-items: center;
+    }
+
+    .myCard input[type="password"],
+    .myCard input[type="password"]::placeholder {
+        text-align: center;
+    }
+
+    .myCard input[type="submit"] {
+        display: block;
+        width: 40%;
+        padding: 1rem 0;
+        margin-top: 1rem;
+    } */
+}
+
+
+
+/* .modal {
+    width: 200px;
+}
+.modal-dialog {
+ 
+          width: 160px;
+ 
+        }
+ 
+.modal-header {
+ 
+    background-color: #337AB7;
+ 
+    padding:16px 16px;
+ 
+    color:#FFF;
+ 
+    border-bottom:2px dashed #337AB7;
+ 
+ }
+
+ .modal-body {
+    background-color: #337AB7;
+    height: 100px;
+ } */
