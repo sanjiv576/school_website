@@ -1,54 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="KEBS School" content="One of the best schools in Manthali, Ramechhap.">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>KEBS School | Home</title>
-  <!-- adds favicon -->
-  <link rel="icon" type="icon/png" href="../images/kebsLogo.png">
+{% block content %}
 
-  <!-- links with fontawesome for icons -->
-  <script src="https://kit.fontawesome.com/075f22e2f4.js" crossorigin="anonymous"></script>
+<title>KEBS School | Home</title>
 
-  <!-- links with external css -->
-  <link rel="stylesheet" type="text/css" href="../css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="../css/login.css">
+{% load static %}
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-  <!-- external js -->
-  <script defer src="../js/homepage.js"></script>
-  
+<!-- for image sliders -->
 
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-
-  <!-- for image sliders -->
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 
@@ -57,105 +18,10 @@
 <body>
   <div class="container-fluid">
     <!-- responive header for desktop -->
-    <header>
-      <div class="row header-row">
-        <div class="col-lg-5">
-          <div class="row">
-            <div class="col-lg-4">
-              <p class="header-text"><i class="fa-solid fa-map-location-dot"></i> Manthali-1, Ramechhap</p>
-            </div>
-            <div class="col-lg-4">
-              <p class="header-text call"><i class="fa-solid fa-phone-volume fa-rotate-by"
-                  style="--fa-rotate-angle: 340deg;"></i> 048-540371</p>
-            </div>
-            <div class="col-lg-4">
-              <p class="header-text"><i class="fa-solid fa-envelope-open-text"></i> kebs2016@gmail.com</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5" style="height: 66px;">
-          <a href=""><img src="../images/longKebsLogog.png" alt="KEBS School logo"
-              class="img-fluid float-left d-block schoolLogo" /></a>
-        </div>
-        <div class="col-lg-2 header-btn">
-          <button class="btn btn-dark btn-hover" type="button" data-toggle="modal"
-            data-target="#popLogin">Login</button>
-          <!-- <button class="btn btn-dark loginBtn" type="button">Login</button> -->
-          <button class="btn btn-dark" type="button">Signup</button>
-
-        </div>
-      </div>
-    </header>
-    <!-- responsive header for tablets and mobiles -->
-    <div class="header-row-show">
-      <div class="row header-row">
-        <div class="col-md-4 col-sm-3 col-3">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-12">
-              <p class="header-text"><i class="fa-solid fa-map-location-dot"></i> Manthali-1, Ramechhap</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-5 col-5" style="height: 40px;">
-          <a href=""><img src="../images/longKebsLogog.png" alt="KEBS School logo"
-              class="img-fluid float-left d-block schoolLogo" /></a>
-        </div>
-        <div class="col-md-2 col-sm-4 col-4 header-btn dropdown">
-          <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownAccount" data-toggle="dropdown">
-            Account
-          </button>
-
-          <div class="dropdown-menu" id="dropdownAccount">
-            
-            <a type="button" class="dropdown-item" data-toggle="modal" data-target="#popLogin">
-              Login
-            </a>
-            <a href="" class="dropdown-item">Signup</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include "includes/header.html" %}
 
     <!-- responsive navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top primary-nav shrink" id="primary-nav">
-      <div class="container-fluid">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#openMenuLinks"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- add here brand on the right and menu on the left -->
-        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-
-        <div class="collapse navbar-collapse" id="openMenuLinks">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-
-            <li class="navbar-item">
-              <a class="nav-link" href="">About us</a>
-            </li>
-
-            <li class="navbar-item">
-              <a href="" class="nav-link">Admission</a>
-            </li>
-
-            <li class="navbar-item">
-              <a href="" class="nav-link">Services</a>
-            </li>
-
-            <li class="navbar-item">
-              <a href="" class="nav-link">Social Activities and Involvements</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-    </nav>
+    {% include "includes/nav.html" %}
 
     <div class="progress-container">
       <div class="progress-bar" id="myBar"></div>
@@ -177,7 +43,7 @@
         <div class="carousel-inner">
 
           <div class="carousel-item active" data-interval="5000">
-            <img src="../images/childStudying.jpeg" class="d-block w-100 h-60" alt="asf">
+            <img src="{% static 'images/childStudying.jpeg' %}" class="d-block w-100 h-60" alt="asf">
             <div class="carousel-caption d-none d-md-block">
 
               <h2 class="imgTitle">Nursery Student</h2>
@@ -186,7 +52,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="../images/1-building.jpeg" class="d-block w-100 mx-auto img-fluid img-thumbnail h-60"
+            <img src="{% static 'images/1-building.jpeg' %}" class="d-block w-100 mx-auto img-fluid img-thumbnail h-60"
               alt="school building image">
             <div class="carousel-caption d-none d-md-block">
               <!-- <marquee behavior="alternate" direction="left" scrollamount="12"><span><h2 class="imgTitle">School Building</h2></span></marquee> -->
@@ -198,7 +64,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="../images/1-scoutTroop.JPG" class="d-block w-100 h-60" alt="scout troop image">
+            <img src="{% static 'images/1-scoutTroop.JPG' %}" class="d-block w-100 h-60" alt="scout troop image">
             <div class="carousel-caption d-none d-md-block">
               <div class="carousel-caption trickcenter"></div>
               <!-- <h2 class="imgTitle">KEBS Scout Troop</h2>
@@ -212,7 +78,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="../images/photo1.jpeg" class="d-block w-100 h-60" alt="asf">
+            <img src="{% static 'images/photo1.jpeg' %}" class="d-block w-100 h-60" alt="asf">
             <div class="carousel-caption d-none d-md-block">
 
               <h2 class="imgTitle">Arts Exhibition</h2>
@@ -221,7 +87,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="../images/children.jpeg" class="d-block w-100 h-60" alt="asf">
+            <img src="{% static 'images/children.jpeg' %}" class="d-block w-100 h-60" alt="asf">
             <div class="carousel-caption d-none d-md-block">
 
               <h2 class="imgTitle">Children Day</h2>
@@ -253,7 +119,7 @@
                 <h2>introduction</h2>
               </div>
               <div class="img-content">
-                <img src="../images/1-building.jpeg" alt="picture of KEBS school building"
+                <img src="{% static 'images/1-building.jpeg' %}" alt="picture of KEBS school building"
                   class="img-fluid mx-auto img-thumbnail">
               </div>
 
@@ -489,7 +355,7 @@
                       </div>
                       <div class="input-group">
                         <div class="input-group-icons">
-                          
+
                           <i class="fa-solid fa-users fa-lg fa-xl fa-xm fa-xs"></i>
                         </div>
                         <select name="form-select" id="" aria-label="" class="form-control">
@@ -502,12 +368,12 @@
                       </div>
 
                     </div>
-                    
+
                     <div class="row" id="remember-forget-section">
                       <div class="col-lg-6">
                         <div class="col-lg-12">
                           <input type="checkbox" id="rememberMe">
-                        <label for="rememberMe">Remember Me</label>
+                          <label for="rememberMe">Remember Me</label>
                         </div>
                       </div>
                       <div class="col-lg-6">
@@ -517,8 +383,8 @@
                       </div>
 
                     </div>
-                    
-                    <br/>
+
+                    <br />
                     <input type="submit" value="Login" class="btn btn-success">
                     <!-- <div class="lower-section-login">
                       <div class="rememberMe-section">
@@ -529,17 +395,17 @@
                         <a href="">Forget Password</a>
                       </div>
                     </div> -->
-                    
-                    
+
+
                     <div class="lower-login-section">
                       <label for="">OR</label>
-                      <br/>
-                  <a href="">Create an account</a>
+                      <br />
+                      <a href="">Create an account</a>
                     </div>
 
                   </form>
 
-                  
+
 
                 </div>
               </div>
@@ -567,12 +433,9 @@
       </button>
 
     </div>
-
-
   </section>
 
   </div>
-</body>
 
 
-</html>
+  {% endblock %}

@@ -1,0 +1,61 @@
+<header>
+    {% load static %}
+    <div class="row header-row">
+      <div class="col-lg-5">
+        <div class="row">
+          <div class="col-lg-4">
+            <p class="header-text"><i class="fa-solid fa-map-location-dot"></i> Manthali-1, Ramechhap</p>
+          </div>
+          <div class="col-lg-4">
+            <p class="header-text call"><i class="fa-solid fa-phone-volume fa-rotate-by"
+                style="--fa-rotate-angle: 340deg;"></i> 048-540371</p>
+          </div>
+          <div class="col-lg-4">
+            <p class="header-text"><i class="fa-solid fa-envelope-open-text"></i> kebs2016@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5" style="height: 66px;">
+        <a href=""><img src="{% static 'images/longKebsLogog.png' %}" alt="KEBS School logo"
+            class="img-fluid float-left d-block schoolLogo" /></a>
+      </div>
+      <div class="col-lg-2 header-btn">
+        <button class="btn btn-dark btn-hover" type="button" data-toggle="modal"
+          data-target="#popLogin">Login</button>
+        <!-- <button class="btn btn-dark loginBtn" type="button">Login</button> -->
+        <button class="btn btn-dark" type="button">Signup</button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- responsive header for tablets and mobiles -->
+  <div class="header-row-show">
+    <div class="row header-row">
+      <div class="col-md-4 col-sm-3 col-3">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-12">
+            <p class="header-text"><i class="fa-solid fa-map-location-dot"></i> Manthali-1, Ramechhap</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-5 col-5" style="height: 40px;">
+        <a href=""><img src="{% static 'images/longKebsLogog.png' %}" alt="KEBS School logo"
+            class="img-fluid float-left d-block schoolLogo" /></a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-4 header-btn dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownAccount" data-toggle="dropdown">
+          Account
+        </button>
+
+        <div class="dropdown-menu" id="dropdownAccount">
+          
+          <a type="button" class="dropdown-item" data-toggle="modal" data-target="#popLogin">
+            Login
+          </a>
+          <a href="" class="dropdown-item">Signup</a>
+
+        </div>
+      </div>
+    </div>
+  </div>

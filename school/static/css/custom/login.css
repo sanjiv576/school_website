@@ -37,7 +37,7 @@
     width: 55%;
     height: 100%;
     background-color: pink;
-    background-image: url("../videos/login-security.gif");
+    background-image: url("{% static 'videos/login-security.gif' %}");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
