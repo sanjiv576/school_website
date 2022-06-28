@@ -126,3 +126,38 @@
     }
 
 }
+
+
+/* register form */
+
+.form-group label{
+    color:white;
+    width: 60%;
+    margin:auto;
+    padding:12px;
+}
+
+.form-group input, .form-control {
+    margin: auto!important;
+    width: 60%!important;
+}
+
+.buttonContent {
+    height: 50px;
+}
+
+.buttonContent a {
+    background-color: black !important;
+    color: white;
+    transition: transform .3s;
+    
+}
+.buttonContent input {
+    border: none;
+    background: transparent;
+}
+.buttonContent a:hover, .buttonContent input  {
+    background-color: darkblue !important;
+    width: 150px;
+    transform: scale(1.25);
+}
