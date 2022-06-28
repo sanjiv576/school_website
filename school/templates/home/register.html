@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<title>KEBS School | Home</title>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/custom/register.css' %}">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- responive header for desktop -->
+    {% include "includes/header.html" %}
+
+    <!-- responsive navbar -->
+    {% include "includes/nav.html" %}
+
+<section class="main-body" style="height: 100vh;">
+
+    <div class="two-body-content" style="display: flex;">
+        <div class="left-body-content">
+            <div class="left-body-content-top">
+                <center>
+                    <h2><u><strong>Create an account</strong></u>
+                    </h2>
+                </center>
+            </div>
+            <div class="left-body-content-middle">
+                <div class="left-body-middle-top">
+                    <form action="" method="GET">
+                        <br />
+                        <label for="firstName" class="register-label">First Name</label>
+                        <input class="register-input" type="text" id="firstName" placeholder="e.g. Sanjiv" />
+                        <label for="middleName" class="register-label">Middle Name</label>
+                        <input class="register-input" type="text" id="middleName" placeholder="e.g. Kumar">
+                        <br /> <br />
+
+                        <label for="lastName" class="register-label">Last Name</label>
+                        <input class="register-input" type="text" id="lastName" placeholder="e.g. Shrestha" />
+                        <label for="address" class="register-label">Address</label>
+                        <input class="register-input" type="text" id="address" placeholder="e.g. Manthali">
+                        <br /> <br />
+
+                        <label for="contact" class="register-label">Contact</label>
+                        <input class="register-input" type="number" id="contact" placeholder="e.g. 9800000000"
+                            id="contact" maxlength="10" />
+                        <label for="role" class="register-label" style="margin-left: 80px;">Role</label>
+                        <select class="register-label" name="role" id="role"
+                            style="color: black; font-style: italic; margin-left: 20px;">
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="admin">Admin</option>
+                        </select> <br /> <br />
+
+                        <label class="register-label" style="margin-left: 130px;">Gender</label>
+                        <input class="register-input" id="male" type="radio" value="male" style="margin-left: 20px;"
+                            name="gender" />
+                        <label for="male" class="register-label" style="margin-left: 10px;">Male</label>
+                        <input class="register-input" id="female" type="radio" value="female" style="margin-left: 10px;"
+                            name="gender" />
+                        <label for="female" class="register-label" style="margin-left: 10px;">Female</label>
+                        <input class="register-input" id="others" type="radio" value="others" style="margin-left: 10px;"
+                            name="gender" />
+                        <label for="others" class="register-label" style="margin-left: 10px;">Others</label>
+                        <br /> <br />
+
+                        <label for="email" class="register-label" style="margin-left: 140px">Email</label>
+                        <input type="email" class="register-input" id="email" style="width: 40%;" />
+                        <br /> <br />
+                    </form>
+                </div>
+                <div class="left-body-middle-bottom" style="height: 30%">
+
+                    <center><button type="submit" class="appointment-button" style="width: 40%;"
+                            onclick="location.href='#'"><span>Continue</span></button></center>
+                </div>
+            </div>
+            <!-- <div class="left-body-content-bottom" style="background-color: rgb(159, 151, 213); width: 100%; height: 17%; margin-bottom: 5px; margin-top: 10px;"></div> -->
+        </div>
+        <div class="right-body-content">
+            <div class="right-body-content-top">
+                <center>
+                    <h2 style="display: inline-block;"><strong>Why should you join this school ?</strong></h2>
+                </center>
+                <ul>
+                    <li>Expand potential learning through theory along with practice. </li> <br />
+                    <li>Reasonable school fee.</li> <br />
+                    <li>Every year, we conduct sports and games competition.</li> <br />
+                    <li>Sufficient laboratory equipment for an individual student in Science and Compter labs.
+                    </li> <br />
+                    <li>Well-furnished and comfortable bench and desk in a well-managed classroom.</li> <br />
+                    <li>Experienced teachers in respective field teach the students.</li> <br />
+                    <li>Healthy foods are provided in school's own canteen.</li> <br />
+                    <li>School bus is avaialable.</li>
+                </ul>
+            </div>
+            <div class="right-body-content-bottom">
+                <center><button class="appointment-button"><span>Take an appointment</span></button></center>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include "includes/footer.html" %}
+
+
+{% endblock %}
