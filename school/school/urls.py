@@ -19,4 +19,6 @@ from home import views
 
 urlpatterns = [
     path('', include('home.urls')),
+    path('register', include('home.urls')),
+    path('home', include('home.urls')),
 ]

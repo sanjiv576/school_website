@@ -16,14 +16,14 @@
         </div>
       </div>
       <div class="col-lg-5" style="height: 66px;">
-        <a href=""><img src="{% static 'images/longKebsLogog.png' %}" alt="KEBS School logo"
+        <a href="{% url 'home' %}"><img src="{% static 'images/longKebsLogog.png' %}" alt="KEBS School logo"
             class="img-fluid float-left d-block schoolLogo" /></a>
       </div>
       <div class="col-lg-2 header-btn">
         <button class="btn btn-dark btn-hover" type="button" data-toggle="modal"
           data-target="#popLogin">Login</button>
         <!-- <button class="btn btn-dark loginBtn" type="button">Login</button> -->
-        <button class="btn btn-dark" type="button">Signup</button>
+        <a class="btn btn-dark" type="button" href="{% url 'register' %}">Signup</a>
 
       </div>
     </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="col-md-6 col-sm-5 col-5" style="height: 40px;">
-        <a href=""><img src="{% static 'images/longKebsLogog.png' %}" alt="KEBS School logo"
+        <a href="{% url 'home' %}"><img src="{% static 'images/longKebsLogog.png' %}" alt="KEBS School logo"
             class="img-fluid float-left d-block schoolLogo" /></a>
       </div>
       <div class="col-md-2 col-sm-4 col-4 header-btn dropdown">
@@ -53,9 +53,12 @@
           <a type="button" class="dropdown-item" data-toggle="modal" data-target="#popLogin">
             Login
           </a>
-          <a href="" class="dropdown-item">Signup</a>
+          <a href="{% url 'register' %}" class="dropdown-item">Signup</a>
 
         </div>
       </div>
     </div>
   </div>
+
+  <!-- modal for Login UI -->
+  {% include "home/login.html" %}
