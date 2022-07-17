@@ -12,6 +12,10 @@
             </button>
           </div>
           <div class="modal-body">
+            {% include "includes/flashMessage.html" %}
+
+            <!-- <div class="alert alert-success m-2" id="msg" role="alert">Alert !!!</div> -->
+
             <div class="myCard">
               <!-- <i class="uil uil-multiply" id="close"></i> -->
               <div class="myBrand">
@@ -116,3 +120,11 @@
 
 
   </section>
+
+  <script>
+    setTimeout(function(){
+      if($('#msg').length > 0){
+        $('#msg').remove();
+      }
+    }, 5000)
+  </script>
