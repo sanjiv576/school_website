@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<title>KEBS School | Home</title>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/custom/register.css' %}">
+<script src="{% static 'js/home/register.js' %}"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- responive header for desktop -->
+        {% include "includes/header.html" %}
+
+        <!-- responsive navbar -->
+        {% include "includes/nav.html" %}
+
+        <section class="main-body" style="height: 100vh;">
+
+            <div class="two-body-content" style="display: flex;">
+                <div class="left-body-content">
+                    <div class="left-body-content-top">
+                        <center>
+                            <h2><u><strong>Create an account</strong></u>
+                            </h2>
+                        </center>
+                    </div>
+                    <div class="left-body-content-middle">
+                        <div class="left-body-middle-top ">
+
+                            <div class="left-body-main-content">
+                                <div class="row row-form">
+                                    <form action="" id="register" method="POST">
+
+                                        {% csrf_token %}
+                                        <div class="col-lg-12 col-md-12 col-12">
+    
+    
+                                            <!-- <div class="form-group">
+                                                <label for="firstName" class="text-center">First Name</label>
+                                                <input type="text" id="firstName" class="form-control"
+                                                    placeholder="Enter your first name" required>
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="firstName" class="text-center">First Name</label>
+                                                <input type="text" class="form-control" placeholder="Enter your first name"
+                                                    id="firstName" name="firstName" required />
+                                                <div class="error"></div>
+                                            </div>
+
+
+                                            <!-- <div class="form-group">
+                                                <label for="middleName" class="text-center">Middle Name</label>
+                                                <input type="text" placeholder="Enter your middle name" class="form-control"
+                                                    id="middleName" required>
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="middleName" class="text-center">Middle Name</label>
+                                                <input type="text" class="form-control" placeholder="Enter your middle name"
+                                                    id="middleName" name="middleName" required />
+                                                <div class="error"></div>
+                                            </div>
+
+
+                                            <!-- <div class="form-group">
+                                                <label for="lastName" class="text-center">Last Name</label>
+                                                <input type="text" placeholder="Enter your last name" class="form-control"
+                                                    id="lastName" required>
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="lastName" class="text-center">Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Enter your last name"
+                                                    id="lastName" name="lastName" required />
+                                                <div class="error"></div>
+                                            </div>
+    
+                                            <!-- <div class="form-group">
+                                                <label for="contact" class="text-center">Contact</label>
+                                                <input type="tel" placeholder="Enter your contact number"
+                                                    class="form-control" id="contact" required>
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="contact" class="text-center">Contact</label>
+                                                <input type="tel" class="form-control" placeholder="Enter your contact number"
+                                                    id="contact" name="contact" required />
+                                                <div class="error"></div>
+                                            </div>
+    
+                                            <!-- <div class="form-group">
+                                                <label for="role" class="text-center">Role</label>
+                                                <select name="form-select" id="role" aria-label="" class="form-control">
+                                                    <option selected class="text-info">Choose role</option>
+                                                    <option value="Student">Student</option>
+                                                    <option value="Teacher">Teacher</option>
+                                                    <option value="Admin">Admin</option>
+                                                </select>
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="role" class="text-center">Role</label>
+                                                <select name="form-select" id="role" aria-label="" class="form-control">
+                                                    <option selected class="text-info">Choose role</option>
+                                                    <option value="Student">Student</option>
+                                                    <option value="Teacher">Teacher</option>
+                                                    <option value="Admin">Admin</option>
+                                                </select>
+                                                
+                                                <div class="error"></div>
+                                            </div>
+    
+    
+                                            <!-- <div class="form-group">
+                                                <label for="username" class="text-center">Username</label>
+                                                <input type="email" id="username" class="form-control"
+                                                    placeholder="Enter your username" required>
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="username" class="text-center">Username</label>
+                                                <input type="text" class="form-control" placeholder="Enter your username"
+                                                    id="username" name="username" required />
+                                                <div class="error"></div>
+                                            </div>
+
+
+                                            <!-- <div class="form-group">
+                                                <label for="password" class="text-center">Password</label>
+                                                <input type="password" placeholder="Enter your password"
+                                                    class="form-control" id="password" aria-describedby="emailHelp"
+                                                    required>
+    
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="password" class="text-center">Password</label>
+                                                <input type="password" class="form-control" placeholder="Enter your password"
+                                                    id="password" name="password" required />
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <!-- <div class="form-group">
+                                                <label for="confirmPassword" class="text-center">Confirm Password</label>
+                                                <input type="password" placeholder="Confirm your password"
+                                                    class="form-control" id="confirmPassword" required>
+    
+                                            </div> -->
+
+                                            <div class="input-control form-group">
+                                                <label for="confirmPassword" class="text-center">Confirm password</label>
+                                                <input type="password" class="form-control" placeholder="Confirm your password"
+                                                    id="confirmPassword name="confirmPassword" required />
+                                                <div class="error"></div>
+                                            </div>
+    
+                                            <div class="form-check text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+                                                <input type="checkbox" class="form-check-input text-center" required>
+                                                <label for="" class="form-check-label form-text text-info">Yes, I agree the
+                                                    code of conduct.</label>
+                                            </div>
+    
+                                            <div class="buttonContent text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <!-- <a href="" class="btn btn-primary text-uppercase">Register</a> -->
+                                                <button type="submit" class="btn btn-primary text-uppercase" onclick="checkValidation()">Register</button>
+                                                <!-- <a href="" class="btn btn-primary text-uppercase"><input type="submit" value="Register"></a> -->
+                                            </div>
+    
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="right-body-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="right-body-content-top">
+
+                        <h2 class="text-center"><strong>Why should you join this school ?</strong></h2>
+
+                        <ul>
+                            <li>Expand potential learning through theory along with practice. </li> <br />
+                            <li>Reasonable school fee.</li> <br />
+                            <li>Every year, we conduct sports and games competition.</li> <br />
+                            <li>Sufficient laboratory equipment for an individual student in Science and Compter labs.
+                            </li> <br />
+                            <li>Well-furnished and comfortable bench and desk in a well-managed classroom.</li> <br />
+                            <li>Experienced teachers in respective field teach the students.</li> <br />
+                            <li>Healthy foods are provided in school's own canteen.</li> <br />
+                            <li>School bus is avaialable.</li>
+                        </ul>
+                    </div>
+                    <div class="right-body-content-bottom text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <center><button class="appointment-button"><span>Take an appointment</span></button></center>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        {% include "includes/footer.html" %}
+
+
+        {% endblock %}
