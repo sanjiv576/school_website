@@ -191,6 +191,8 @@ ul li {
     background-color: white;
     font-weight: bolder;
     color: black;
+    width: 50%;
+    margin-left: 27%;
 }
 
 marquee h2 {
@@ -411,13 +413,57 @@ marquee h2 {
 
 /*  vision-philosophy-mission content*/
 
-.vision-philosophy-mission {
-    background-color: green;
-    height: 200px;
+section .row > .col {
+    margin: 5% !important;
+    height: 200px !important;
 }
+
+.vision-philosophy-mission {
+    background-color: #0B4DAF;
+    height: 40%;
+    width: 30%;
+    margin: 3.33%;
+}
+/* .vision-philosophy-mission-content {
+    display: flex !important;
+    flex-direction: column;
+    height: 300px; 
+    width: 100%;
+    background-color: green;
+}
+.vision-philosophy-mission-content > div {
+    display: flex;
+    background-color: blue;
+    width: 26.67%;
+    height: 70%;
+    margin: 5%;
+} */
+
+/* .card .card-body-content {
+    background-color: rgb(156, 21, 43);
+    height: 60%;
+    margin: auto;
+} */
+
+/* .vision {
+    background-color: grey !important;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+} */
+
 
 /* main body container */
 .container-fluid {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
+
+
+@media screen and (max-width: 426px) {
+    
+    .card-body {
+        height: 300px!important;
+    }
+}
+

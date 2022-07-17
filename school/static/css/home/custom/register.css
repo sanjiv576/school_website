@@ -60,7 +60,10 @@
     /* height: 75%; */
     margin-bottom: 5px;
 }
-
+.right-body-content-top h2 {
+    display: inline-block;
+    
+}
 .appointment-button {
     border: none;
     background-color: green;
@@ -132,14 +135,20 @@
 
 .form-group label{
     color:white;
-    width: 60%;
+    
     margin:auto;
     padding:12px;
 }
 
+.left-body-main-content {
+    height: 49%;
+    /* background-color: purple; */
+    margin: auto;
+    width: 52% !important;
+}
+
 .form-group input, .form-control {
     margin: auto!important;
-    width: 60%!important;
 }
 
 .buttonContent {
@@ -160,4 +169,10 @@
     background-color: darkblue !important;
     width: 150px;
     transform: scale(1.25);
+}
+
+
+.form-group > label:after {
+    content: ' *';
+    color: red;
 }

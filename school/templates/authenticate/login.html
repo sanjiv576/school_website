@@ -30,7 +30,7 @@
                         <div class="input-group-icons">
                           <i class="fa-solid fa-user fa-lg fa-xl fa-xm fa-xs"></i>
                         </div>
-                        <input class="form-control" id="email" name="email" type="text" placeholder="Username" />
+                        <input class="form-control" id="email" name="email" type="text" placeholder="Username" required/>
                       </div>
 
                       <div class="input-group">
@@ -38,7 +38,7 @@
                           <i class="fa-solid fa-lock fa-lg fa-xl fa-xm fa-xs"></i>
                         </div>
                         <input class="form-control" id="password" name="password" type="password"
-                          placeholder="Password" />
+                          placeholder="Password" required/>
 
                         <div class="showPassword">
                           <i class="fa-solid fa-eye fa-lg fa-xl fa-xm fa-xs" id="togglePassword"></i>
@@ -77,7 +77,8 @@
                     </div>
 
                     <br />
-                    <input type="submit" value="Login" class="btn btn-success">
+                    <!-- <input type="submit" value="Login" class="btn btn-success"> -->
+                    <a href="/authenticate/login" class="btn btn-primary">Login</a>
                     <!-- <div class="lower-section-login">
                       <div class="rememberMe-section">
                         <input type="checkbox" id="rememberMe">
@@ -92,7 +93,7 @@
                     <div class="lower-login-section">
                       <label for="">OR</label>
                       <br />
-                      <a href="">Create an account</a>
+                      <a href="/authenticate/register">Create an account</a>
                     </div>
 
                   </form>
