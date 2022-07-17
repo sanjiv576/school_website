@@ -5,8 +5,8 @@ def index(request):
     return render(request, 'home/homepage.html')
 
 
-def register(request):
-    return render(request, 'home/register.html')
+# def register(request):
+#     return render(request, 'authenticate/register.html')
 
 
 def home(request):
