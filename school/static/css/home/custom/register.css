@@ -60,10 +60,12 @@
     /* height: 75%; */
     margin-bottom: 5px;
 }
+
 .right-body-content-top h2 {
     display: inline-block;
-    
+
 }
+
 .appointment-button {
     border: none;
     background-color: green;
@@ -117,14 +119,15 @@
     }
 
     .left-body-content,
-    .right-body-content, .left-body-content-middle {
+    .right-body-content,
+    .left-body-content-middle {
         border-radius: 0px;
         margin: 0;
         width: 100%;
 
     }
 
-    .right-body-content{
+    .right-body-content {
         margin-top: -4px !important;
     }
 
@@ -133,11 +136,11 @@
 
 /* register form */
 
-.form-group label{
-    color:white;
-    
-    margin:auto;
-    padding:12px;
+.form-group label {
+    color: white;
+
+    margin: auto;
+    padding: 12px;
 }
 
 .left-body-main-content {
@@ -147,32 +150,56 @@
     width: 52% !important;
 }
 
-.form-group input, .form-control {
-    margin: auto!important;
+.form-group input,
+.form-control {
+    margin: auto !important;
 }
 
 .buttonContent {
     height: 50px;
+    margin: 10px;
 }
 
-.buttonContent a {
-    background-color: black !important;
+/* effects for submit input */
+.buttonContent input {
+    background-color: black;
+    border-color: blue;
     color: white;
     transition: transform .3s;
-    
 }
-.buttonContent input {
-    border: none;
-    background: transparent;
-}
-.buttonContent a:hover, .buttonContent input  {
-    background-color: darkblue !important;
-    width: 150px;
+.buttonContent input:hover {
+    background-color: darkblue;
+    border-radius: 8px;
+    border-color: white;
+    width: 100px;
     transform: scale(1.25);
 }
 
-
-.form-group > label:after {
+.form-group>label:after {
     content: ' *';
     color: red;
+}
+.form-group>label:nth-child(2):after{
+    content: 'asfd ';
+}
+
+.form-group .middle_name:after {
+    content: ' ';
+}
+
+/* error display */
+
+
+/* .input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+} */
+
+.input-control .error {
+    color: white;
+    font-size: 12px;
+    height: 13px;
 }
