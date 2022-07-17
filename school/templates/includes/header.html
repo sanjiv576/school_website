@@ -20,10 +20,11 @@
             class="img-fluid float-left d-block schoolLogo" /></a>
       </div>
       <div class="col-lg-2 header-btn">
+        <!-- as clicked on opens login modal -->
         <button class="btn btn-dark btn-hover" type="button" data-toggle="modal"
           data-target="#popLogin">Login</button>
         <!-- <button class="btn btn-dark loginBtn" type="button">Login</button> -->
-        <a class="btn btn-dark" type="button" href="{% url 'register' %}">Signup</a>
+        <a class="btn btn-dark" type="button" href="/authenticate/register">Signup</a>
 
       </div>
     </div>
@@ -50,10 +51,11 @@
 
         <div class="dropdown-menu" id="dropdownAccount">
           
+          <!-- as clicked on opens login modal -->
           <a type="button" class="dropdown-item" data-toggle="modal" data-target="#popLogin">
             Login
           </a>
-          <a href="{% url 'register' %}" class="dropdown-item">Signup</a>
+          <a href="/authenticate/register" class="dropdown-item">Signup</a>
 
         </div>
       </div>
@@ -61,4 +63,4 @@
   </div>
 
   <!-- modal for Login UI -->
-  {% include "home/login.html" %}
+  {% include "authenticate/login.html" %}
