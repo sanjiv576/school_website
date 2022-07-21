@@ -5,8 +5,13 @@
 <title>KEBS School | Home</title>
 
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/home/custom/register.css' %}">
-<script defer src="{% static 'js/home/register.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/authenticate/custom/register.css' %}">
+<script defer src="{% static 'js/authenticate/registerValidation.js' %}"></script>
+
+<!-- for sweet alert message -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static '/assets/sweetalert2.all.min.js' %}"></script>
+
 </head>
 
 <body>
@@ -34,8 +39,15 @@
                                 <div class="row row-form">
 
                                     <!-- {% include "includes/flashMessage.html" %} -->
+                                    
+                                    {% if error %}
 
-                                    <form action="" id="register" methods="POST">
+                                    <div class="alert alert-danger" role="alert">
+                                        {{error}}
+                                    </div>
+                                    {% endif %}
+
+                                    <form action="" id="register" method="POST">
 
                                         {% csrf_token %}
                                         <div class="col-lg-12 col-md-12 col-12">
@@ -79,7 +91,7 @@
 
                                             <div class="input-control form-group">
                                                 <label for="role" class="text-center">Role</label>
-                                                <select name="role" id="role" aria-label="" class="form-control" >
+                                                <select name="role" id="role" aria-label="" class="form-control">
                                                     <option selected class="text-info">Choose role</option>
                                                     <option value="Student">Student</option>
                                                     <option value="Teacher">Teacher</option>
@@ -111,7 +123,8 @@
                                                 <label for="confirmPassword" class="text-center">Confirm
                                                     password</label>
                                                 <input type="password" class="form-control"
-                                                    placeholder="Confirm your password" id="confirmPassword" name="confirmPassword" required />
+                                                    placeholder="Confirm your password" id="confirmPassword"
+                                                    name="confirmPassword" required />
                                                 <div class="error"></div>
                                             </div>
 
@@ -126,9 +139,9 @@
                                             <div
                                                 class="buttonContent text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                                                <input type="submit" value="register" class="text-uppercase" />
+                                                <!-- <input type="submit" value="register" class="text-uppercase" /> -->
 
-                                                <!-- <button onclick="verifyDetails(e)" class="submit-btn">Signup</button> -->
+                                                <button onclick="verifyDetails()" class="submit-btn btn btn-primary">Register !</button>
                                             </div>
 
                                         </div>

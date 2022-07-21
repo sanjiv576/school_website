@@ -161,25 +161,29 @@
 }
 
 /* effects for submit input */
-.buttonContent input {
-    background-color: black;
-    border-color: blue;
-    color: white;
-    transition: transform .3s;
+.buttonContent input,
+.buttonContent button {
+    background-color: black!important;
+    border-color: blue!important;
+    color: white!important;
+    transition: transform .3s!important;
 }
-.buttonContent input:hover {
-    background-color: darkblue;
-    border-radius: 8px;
-    border-color: white;
-    width: 100px;
-    transform: scale(1.25);
+
+.buttonContent input:hover,
+.buttonContent button:hover {
+    background-color: darkblue!important;
+    border-radius: 8px!important;
+    border-color: white!important;
+    width: 100px!important;
+    transform: scale(1.25)!important;
 }
 
 .form-group>label:after {
     content: ' *';
     color: red;
 }
-.form-group>label:nth-child(2):after{
+
+.form-group>label:nth-child(2):after {
     content: 'asfd ';
 }
 
@@ -190,16 +194,17 @@
 /* error display */
 
 
-/* .input-control.success input {
+.input-control.success input {
     border-color: #09c372;
 }
 
 .input-control.error input {
     border-color: #ff3860;
-} */
+}
 
 .input-control .error {
-    color: white;
+    color: red;
     font-size: 12px;
     height: 13px;
+    padding: 10px;
 }

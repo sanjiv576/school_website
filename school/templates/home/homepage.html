@@ -28,6 +28,16 @@
     </div>
 
     <section>
+      {% if message %}
+
+      <div class="alert alert-success" role="alert">
+        <p class="text-success text-center"><strong>{{message}}</strong></p>
+      </div>
+      {% endif %}
+    </section>
+
+
+    <section>
 
       <div id="makeCarousel" class="carousel carousel-dark slide" data-ride="carousel">
 
