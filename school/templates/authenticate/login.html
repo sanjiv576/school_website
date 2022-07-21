@@ -1,130 +1,133 @@
 <section>
-    <script defer src="../js/home/login.js"></script>
-    <!-- Modal for login page-->
-    <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg modal-xl" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>User Login Panel</h3>
-            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+  <script defer src="../js/home/login.js"></script>
+  <!-- Modal for login page-->
+  <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>User Login Panel</h3>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
-            </button>
-          </div>
-          <div class="modal-body">
-            {% include "includes/flashMessage.html" %}
+          </button>
+        </div>
+        <div class="modal-body">
+          {% include "includes/flashMessage.html" %}
 
-            <!-- <div class="alert alert-success m-2" id="msg" role="alert">Alert !!!</div> -->
+          <!-- <div class="alert alert-success m-2" id="msg" role="alert">Alert !!!</div> -->
 
-            <div class="myCard">
-              <!-- <i class="uil uil-multiply" id="close"></i> -->
-              <div class="myBrand">
-                <!-- <img src="../images/login_user_128.png" alt=""> -->
+          <div class="myCard">
+            <!-- <i class="uil uil-multiply" id="close"></i> -->
+            <div class="myBrand">
+              <!-- <img src="../images/login_user_128.png" alt=""> -->
 
-              </div>
-              <div class="main-info">
+            </div>
+            <div class="main-info">
 
-                <div class="login-info">
-                  <form action="">
+              <div class="login-info">
+                <form action="/authenticate/login" method="POST">
 
+                  {% csrf_token %}
+                  <div class="form-group ">
 
-                    <div class="form-group ">
+                    <!-- for showing error message -->
+                    {% if error %}
 
-                      <div class="input-group">
-                        <div class="input-group-icons">
-                          <i class="fa-solid fa-user fa-lg fa-xl fa-xm fa-xs"></i>
-                        </div>
-                        <input class="form-control" id="email" name="email" type="text" placeholder="Username" required/>
+                    <div class="alert alert-danger" role="alert" id="msg">
+                      {{error}}
+                    </div>
+                    {% endif %}
+
+                    <div class="input-group">
+                      <div class="input-group-icons">
+                        <i class="fa-solid fa-user fa-lg fa-xl fa-xm fa-xs"></i>
                       </div>
+                      <input class="form-control" id="username" name="username" type="text" placeholder="Username"
+                        required />
+                    </div>
 
-                      <div class="input-group">
-                        <div class="input-group-icons">
-                          <i class="fa-solid fa-lock fa-lg fa-xl fa-xm fa-xs"></i>
-                        </div>
-                        <input class="form-control" id="password" name="password" type="password"
-                          placeholder="Password" required/>
 
-                        <div class="showPassword">
-                          <i class="fa-solid fa-eye fa-lg fa-xl fa-xm fa-xs" id="togglePassword"></i>
-                        </div>
-
+                    <div class="input-group">
+                      <div class="input-group-icons">
+                        <i class="fa-solid fa-lock fa-lg fa-xl fa-xm fa-xs"></i>
                       </div>
-                      <div class="input-group">
-                        <div class="input-group-icons">
+                      <input class="form-control" id="password" name="password" type="password" placeholder="Password"
+                        required />
 
-                          <i class="fa-solid fa-users fa-lg fa-xl fa-xm fa-xs"></i>
-                        </div>
-                        <select name="form-select" id="" aria-label="" class="form-control">
-                          <option selected class="text-info">Choose role</option>
-                          <option value="Student">Student</option>
-                          <option value="Teacher">Teacher</option>
-                          <option value="Admin">Admin</option>
-                        </select>
-
+                      <div class="showPassword">
+                        <i class="fa-solid fa-eye fa-lg fa-xl fa-xm fa-xs" id="togglePassword"></i>
                       </div>
 
                     </div>
+                    <div class="input-group">
+                      <div class="input-group-icons">
 
-                    <div class="row" id="remember-forget-section">
-                      <div class="col-lg-6">
-                        <div class="col-lg-12">
-                          <input type="checkbox" id="rememberMe">
-                          <label for="rememberMe">Remember Me</label>
-                        </div>
+                        <i class="fa-solid fa-users fa-lg fa-xl fa-xm fa-xs"></i>
                       </div>
-                      <div class="col-lg-6">
-                        <div class="col-lg-11">
-                          <a href="">Forget Password</a>
-                        </div>
-                      </div>
+                      <select name="form-select" id="" aria-label="" class="form-control">
+                        <option selected class="text-info">Choose role</option>
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Admin">Admin</option>
+                      </select>
 
                     </div>
 
-                    <br />
-                    <!-- <input type="submit" value="Login" class="btn btn-success"> -->
-                    <a href="/authenticate/login" class="btn btn-primary">Login</a>
-                    <!-- <div class="lower-section-login">
-                      <div class="rememberMe-section">
+                  </div>
+
+                  <div class="row" id="remember-forget-section">
+                    <div class="col-lg-6">
+                      <div class="col-lg-12">
                         <input type="checkbox" id="rememberMe">
                         <label for="rememberMe">Remember Me</label>
                       </div>
-                      <div class="forgotPassword-section">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="col-lg-11">
                         <a href="">Forget Password</a>
                       </div>
-                    </div> -->
-
-
-                    <div class="lower-login-section">
-                      <label for="">OR</label>
-                      <br />
-                      <a href="/authenticate/register">Create an account</a>
                     </div>
 
-                  </form>
+                  </div>
+
+                  <br />
+
+                  <!-- <input type="submit" value="log" class="text-uppercase" /> -->
+                  <input type="submit" value="Login!" class="btn btn-success" />
+                  <!-- <a href="/authenticate/login" class="btn btn-primary">Login</a> -->
+
+                  <div class="lower-login-section">
+                    <label for="">OR</label>
+                    <br />
+                    <a href="/authenticate/register">Create an account</a>
+                  </div>
+
+                </form>
 
 
 
-                </div>
               </div>
-
-
             </div>
+
+
           </div>
-          <!-- <div class="modal-footer">
+        </div>
+        <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div> -->
-        </div>
       </div>
     </div>
+  </div>
 
 
-  </section>
+</section>
 
-  <script>
-    setTimeout(function(){
-      if($('#msg').length > 0){
-        $('#msg').remove();
-      }
-    }, 5000)
-  </script>
+<!-- js for hiding error message -->
+<script>
+  setTimeout(function () {
+    if ($('#msg').length > 0) {
+      $('#msg').remove();
+    }
+  }, 5000)
+</script>
