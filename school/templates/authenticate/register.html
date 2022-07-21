@@ -42,7 +42,7 @@
                                     
                                     {% if error %}
 
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-danger" role="alert" id="errorMsg">
                                         {{error}}
                                     </div>
                                     {% endif %}
@@ -184,6 +184,15 @@
         </section>
 
         {% include "includes/footer.html" %}
+
+        <!-- js for hiding error message -->
+        <script>
+            setTimeout(function(){
+              if($('#errorMsg').length > 0){
+                $('#errorMsg').remove();
+              }
+            }, 5000)
+          </script>
 
 
         {% endblock %}

@@ -28,10 +28,19 @@
     </div>
 
     <section>
+      <!-- for showing success message -->
       {% if message %}
 
       <div class="alert alert-success" role="alert">
         <p class="text-success text-center"><strong>{{message}}</strong></p>
+      </div>
+      {% endif %}
+
+      <!-- for showing error message -->
+      {% if error %}
+
+      <div class="alert alert-danger" role="alert" id="msg">
+        {{error}}
       </div>
       {% endif %}
     </section>
@@ -356,6 +365,15 @@
   </section>
 
   </div>
+
+  <!-- js for hiding error message -->
+  <script>
+    setTimeout(function () {
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 5000)
+  </script>
 
 
   {% endblock %}
