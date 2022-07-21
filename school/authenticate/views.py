@@ -6,20 +6,49 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from authenticate.forms import UserForm
-from authenticate.models import User
-# from django.contrib.auth.models import User
+from authenticate.models import UserInfo
+
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
 def login_page(request):
     
     print("hello, checking validation")
-    
+    print(request.method)
+    # message = None
+    if(request.method == 'POST'):
+        error_msg = None
+
+        # username = request.POST['username']
+        # password = request.POST['password']
+        # user = authenticate(request, username=username, password=password)
+        user = authenticate(request,
+                username=request.POST['username'],
+                password = request.POST['password']
+                )
+
+        print(user)
+        print("HEllo heloo")
+
+        # if there is valid/registered account, then, login
+        if(user is not None):
+            # add login account details in django_session table of django
+            login(request, user)
+            message = "Login successfully"
+            print(message)
+            # open admin panel
+            return redirect('/home/home')
+        else :
+            print("User account is not found")
+            error_msg = "Provided account has not been registered or something went wrong."
+            return render(request, 'home/homepage.html', {'error': error_msg})
 
     # messages.add_message(request, messages.INFO, 'Hello world.')
     # messages.success(request, 'Profile details updated.')
     # messages = messages.success(request, 'Profile details updated.')
     # messages = "Good job"
 
-    messages.success(request, "Login successfully")
+    messages.warning(request, "Login failed")
     return render(request, 'home/homepage.html')
 
 
@@ -52,7 +81,7 @@ def register_page(request):
 
 
         # validation
-
+        
         error_msg = None
         
 
@@ -90,7 +119,7 @@ def register_page(request):
             # first_name is the attribute of the table
             # firstName is the name of the field
 
-            User( 
+            UserInfo( 
                 first_name = first_name,
                 middle_name = middle_name,
                 last_name = last_name,
@@ -99,6 +128,15 @@ def register_page(request):
                 username = username, 
                 password = password
             ).save()
+
+            # for auth_user
+
+            User.objects.create_user(
+            first_name = request.POST['firstName'],
+            last_name = request.POST['lastName'],
+            username = request.POST['username'],
+            password = request.POST['password']
+            )
 
             
             login_msg = first_name + ", your account has been created successfully. Now login."
@@ -111,3 +149,13 @@ def register_page(request):
 
 
     return render(request, "authenticate/register.html")
+
+
+def logout_func(request):
+    # loggin out the user
+    logout(request)
+
+    login_msg = "You are loged out."
+
+    print("User log out")
+    return redirect("/home/home", {'message': login_msg})
