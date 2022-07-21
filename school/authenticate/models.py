@@ -4,8 +4,8 @@ from django.db import models
 
 # Create your models here.
 
-# models for user
-class User(models.Model):
+# models for UserInfo
+class UserInfo(models.Model):
     user_id = models.AutoField(auto_created=True, primary_key = True)
     first_name = models.CharField(max_length=20, null=False)
     middle_name = models.CharField(max_length=20, default="", null=True)
@@ -18,8 +18,7 @@ class User(models.Model):
     
 
     class Meta:
-        db_table = "User"
-        # fields = '__all__'
+        db_table = "UserInfo"
 
 # class Notice_Academic(models.Model):
 #     notice_id = models.AutoField(auto_created=True, primary_key = True)
@@ -28,7 +27,7 @@ class User(models.Model):
 #     image = models.FileField(upload_to="static/images/user", default="default.jpg")
 #     description = models.CharField(max_length=80, null=False)
 #     category = models.CharField(max_length=30, null=False)
-#     user_id = models.ForeignKey(User, default=None)
+#     user_id = models.ForeignKey(UserInfo, default=None)
 
 #     class Meta:
 #         db_table = "notice_academic"
