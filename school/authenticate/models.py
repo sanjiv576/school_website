@@ -18,7 +18,8 @@ class User(models.Model):
     
 
     class Meta:
-        db_table = "user"
+        db_table = "User"
+        # fields = '__all__'
 
 # class Notice_Academic(models.Model):
 #     notice_id = models.AutoField(auto_created=True, primary_key = True)
