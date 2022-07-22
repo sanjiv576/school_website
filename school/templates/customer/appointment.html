@@ -1,0 +1,66 @@
+{% extends "common_create.html" %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+
+    <div class="col-lg-12 col-md-12 col-12">
+        <h4 class="text-center">Take Appointment</h4>
+
+        <!-- for showing error message -->
+        {% if error %}
+
+        <div class="alert alert-danger" role="alert" id="msg">
+            {{error}}
+        </div>
+        {% endif %}
+
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fullname">Full name</label>
+            <input type="text" id="fullname" class="form-control" placeholder="Enter your full name" name="fullName" required>
+        </div>
+
+
+        <div class="form-group">
+            <select class="form-selection" aria-label="Disabled select example" name="category">
+                <option selected>For what ?</option>
+                <option value="vacancy">Vacancy</option>
+                <option value="enrollment">Enrollment</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact</label>
+            <input type="number" class="form-control" id="contact" name="contact" required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="time" class="form-control" id="time" name="time" required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <br>
+            <textarea id="desc" name="description" rows="4" cols="40" required></textarea>
+
+        </div>
+
+        <small class="form-text text-info" id="help">Note: * fields are required.</small>
+
+        <br><br>
+        <button class="btn btn-primary text-center" type="submit">Take Appointment</button>
+
+    </div>
+</form>
+
+<br>
+<a href="/authenticate/register"> Back </a>
+{% endblock %}
