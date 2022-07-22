@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from user.models import Notice_Vacancy
+
 
 # Create your views here.
 def index(request):
-    return render(request, 'home/homepage.html')
+
+    notice_details = Notice_Vacancy.objects.all()
+    return render(request, 'home/homepage.html', {'notice_details': notice_details})
 
 
 # def register(request):
@@ -10,4 +14,6 @@ def index(request):
 
 
 def home(request):
-    return render(request, "home/homepage.html")
+    
+    notice_details = Notice_Vacancy.objects.all()
+    return render(request, 'home/homepage.html', {'notice_details': notice_details})
