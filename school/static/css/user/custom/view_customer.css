@@ -1,0 +1,31 @@
+.table-content table {
+    border-collapse: collapse;
+    text-align: center;
+
+}
+
+
+.table-content table thead>tr {
+    background-color: rgb(43, 176, 43);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 40px;
+
+}
+
+.table-content #view_customer_table th,
+.table-content #view_customer_table td {
+    border: 1px solid #ddd;
+    width: 10%;
+}
+
+table tbody td {
+    height: 30px;
+}
+
+
+table tbody tr:hover {
+    background-color: rgb(124, 114, 114);
+    color: white;
+}

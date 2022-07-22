@@ -4,102 +4,231 @@
 
 <title>KEBS School | Admin</title>
 {% load static %}
+<!-- added custom css -->
 <link rel="stylesheet" href="{% static 'css/user/custom/adminDashboard.css' %}">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<link rel="stylesheet" href="{% static 'css/user/custom/view_customer.css' %}">
+
+<!-- Fontawesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header>
-            <!-- responsive navbar -->
-            {% include "includes/nav.html" %}
-        </header>
-    </div>
+  <div class="container-fluid">
+    <header>
+      <!-- responsive navbar -->
+      {% include "includes/nav.html" %}
+    </header>
+  </div>
 
 
-    <div class="container">
-        <div class="topic">
-          <!-- <form action="" method="POST" enctype="multipart/form-data">
+  <div class="container">
+    <div class="topic">
+      <!-- <form action="" method="POST" enctype="multipart/form-data">
             <img src="{% static 'images/user/default.jpeg' %}" alt="" class="img-thumbnail rounded-circle"/>
             <input type="file" name="image" value="Edit"/>
           </form> -->
 
-          <img src="{% static 'images/user/default.jpeg' %}" alt="" class="img-thumbnail rounded-circle"/>
-        </div>
+      <img src="{% static 'images/user/default.jpeg' %}" alt="" class="img-thumbnail rounded-circle" />
+    </div>
 
-        <!-- left tabs -->
-        <div class="content">
-          <input type="radio" name="slider" checked id="view_customer">
-          <input type="radio" name="slider" id="view_appointment">
-          <input type="radio" name="slider" id="notice_vacancy">
-          <input type="radio" name="slider" id="intro">
-          <input type="radio" name="slider" id="add_notice">
-          <input type="radio" name="slider" id="add_intro">
-          
-          <!-- tabs list -->
-          <div class="list">
-            <label for="view_customer" class="view_customer">
-            <i class="fa-solid fa-user-check"></i>
-            <span class="title">View Customer</span>
-          </label>
-          <label for="view_appointment" class="view_appointment">
-            <span class="icon"><i class="fas fa-blog"></i></span>
-            <span class="title">Appointment</span>
-          </label>
-          <label for="notice_vacancy" class="notice_vacancy">
-            <span class="icon"><i class="far fa-envelope"></i></span>
-            <span class="title">View|Edit Notice</span>
-          </label>
-          <label for="intro" class="intro">
-            <span class="icon"><i class="fas fa-code"></i></span>
-            <span class="title">View|Edit Intro</span>
-          </label>
-          <label for="add_notice" class="add_notice">
-            <span class="icon"><i class="fa-solid fa-comment-sms"></i></span>
-            <span class="title">Add Notice</span>
-          </label>
-          <label for="add_intro" class="add_intro">
-            <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
-            <span class="title">Add Intro</span>
-          </label>
-          <label for="logout" class="logout">
-            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-            <button><span class="title">Logout</span></button>
-          </label>
-          <div class="slider"></div>
-        </div>
+    <!-- left tabs -->
+    <div class="content">
+      <input type="radio" name="slider" checked id="view_customer">
+      <input type="radio" name="slider" id="view_appointment">
+      <input type="radio" name="slider" id="notice_vacancy">
+      <input type="radio" name="slider" id="intro">
+      <input type="radio" name="slider" id="add_notice">
+      <input type="radio" name="slider" id="add_intro">
 
-        <!-- main right content -->
-          <div class="text-content">
-            <div class="view_customer text">
-              <div class="title">View Customer</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi excepturi ducimus sequi dignissimos expedita tempore omnis quos cum, possimus, aspernatur esse nihil commodi est maiores dolorum rem iusto atque, beatae voluptas sit eligendi architecto dolorem temporibus. Non magnam ipsam, voluptas quasi nam dicta ut. Ad corrupti aliquid obcaecati alias, nemo veritatis porro nisi eius sequi dignissimos ea repellendus quibusdam minima ipsum animi quae, libero quisquam a! Laudantium iste est sapiente, ullam itaque odio iure laborum voluptatem quaerat tempore doloremque quam modi, atque minima enim saepe! Dolorem rerum minima incidunt, officia!</p>
-            </div>
-            <div class="view_appointment text">
-              <div class="title">Appointment</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias tempora, unde reprehenderit incidunt excepturi blanditiis ullam dignissimos provident quam? Fugit, enim! Architecto ad officiis dignissimos ex quae iusto amet pariatur, ea eius aut velit, tempora magnam hic autem maiores unde corrupti tenetur delectus! Voluptatum praesentium labore consectetur ea qui illum illo distinctio, sunt, ipsam rerum optio quibusdam cum a? Aut facilis non fuga molestiae voluptatem omnis reprehenderit, dignissimos commodi repellat sapiente natus ipsam, ipsa distinctio. Ducimus repudiandae fuga aliquid, numquam.</p>
-            </div>
-            <div class="notice_vacancy text">
-              <div class="title">View Notice Vacancy Publish</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores error neque, officia excepturi dolores quis dolor, architecto iusto deleniti a soluta nostrum. Fuga reiciendis beatae, dicta voluptatem, vitae eligendi maxime accusamus. Amet totam aut odio velit cumque autem neque sequi provident mollitia, nisi sunt maiores facilis debitis in officiis asperiores saepe quo soluta laudantium ad non quisquam! Repellendus culpa necessitatibus aliquam quod mollitia perspiciatis ducimus doloribus perferendis autem, omnis, impedit, veniam qui dolorem? Ipsam nihil assumenda, sit ratione blanditiis eius aliquam libero iusto, dolorum aut perferendis modi laboriosam sint dolor.</p>
-            </div>
-            <div class="intro text">
-              <div class="title">View Introduction</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore magnam vitae inventore blanditiis nam tenetur voluptates doloribus error atque reprehenderit, necessitatibus minima incidunt a eius corrupti placeat, quasi similique deserunt, harum? Quia ut impedit ab earum expedita soluta repellat perferendis hic tempora inventore, accusantium porro consequuntur quisquam et assumenda distinctio dignissimos doloremque enim nemo delectus deserunt! Ullam perspiciatis quae aliquid animi quam amet deleniti, at dolorum tenetur, tempore laborum.</p>
-            </div>
-            <div class="add_notice text">
-              <div class="title">Add Notice Vacancy</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus incidunt possimus quas ad, sit nam veniam illo ullam sapiente, aspernatur fugiat atque. Laboriosam libero voluptatum molestiae veniam earum quisquam, laudantium aperiam, eligendi dicta animi maxime sunt non nisi, ex, ipsa! Soluta ex, quibusdam voluptatem distinctio asperiores recusandae veritatis optio dolorem illo nesciunt quos ullam, dicta numquam ipsam cumque sed. Blanditiis omnis placeat, enim sit dicta eligendi voluptatibus laborum consectetur repudiandae tempora numquam molestiae rerum mollitia nemo. Velit perspiciatis, nesciunt, quo illo quas error debitis molestiae et sapiente neque tempore natus?</p>
-            </div>
-            <div class="add_intro text">
-              <div class="title">Add Introduction</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus incidunt possimus quas ad, sit nam veniam illo ullam sapiente, aspernatur fugiat atque. Laboriosam libero voluptatum molestiae veniam earum quisquam, laudantium aperiam, eligendi dicta animi maxime sunt non nisi, ex, ipsa! Soluta ex, quibusdam voluptatem distinctio asperiores recusandae veritatis optio dolorem illo nesciunt quos ullam, dicta numquam ipsam cumque sed. Blanditiis omnis placeat, enim sit dicta eligendi voluptatibus laborum consectetur repudiandae tempora numquam molestiae rerum mollitia nemo. Velit perspiciatis, nesciunt, quo illo quas error debitis molestiae et sapiente neque tempore natus?</p>
-            </div>
+      <!-- tabs list -->
+      <div class="list">
+        <label for="view_customer" class="view_customer">
+          <i class="fa-solid fa-user-check"></i>
+          <span class="title">View Customer</span>
+        </label>
+        <label for="view_appointment" class="view_appointment">
+          <span class="icon"><i class="fas fa-blog"></i></span>
+          <span class="title">Appointment</span>
+        </label>
+        <label for="notice_vacancy" class="notice_vacancy">
+          <span class="icon"><i class="far fa-envelope"></i></span>
+          <span class="title">View|Edit Notice</span>
+        </label>
+        <label for="intro" class="intro">
+          <span class="icon"><i class="fas fa-code"></i></span>
+          <span class="title">View|Edit Intro</span>
+        </label>
+        <label for="add_notice" class="add_notice">
+          <span class="icon"><i class="fa-solid fa-comment-sms"></i></span>
+          <span class="title">Add Notice</span>
+        </label>
+        <label for="add_intro" class="add_intro">
+          <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+          <span class="title">Add Intro</span>
+        </label>
+        <label for="logout" class="logout">
+          <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+          <button><span class="title">Logout</span></button>
+        </label>
+        <div class="slider"></div>
+      </div>
+
+      <!-- main right content -->
+      <div class="text-content">
+        <div class="view_customer text">
+          <div class="title">View Customer</div>
+
+          <!-- table here -->
+
+          <div class="table-content">
+            <table cellspacing="0" id="view_customer_table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Profile</th>
+                  <th rowspan="2">First Name</th>
+                  <th rowspan="2">Middle Name</th>
+                  <th rowspan="2">Last Name</th>
+                  <th rowspan="2">Role</th>
+                  <th rowspan="2">Contact</th>
+                  <th rowspan="2">Username</th>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Pokhara</td>
+                  <td>Lukla</td>
+                  <td>2020/04/12</td>
+
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Jomsom</td>
+                  <td>Pokhara</td>
+                  <td>2021/01/14</td>
+
+                </tr>
+
+                {% for user in users %}
+                <tr>
+                  <td> <img src="/{{ customer.image }} " width="100"></td>
+                  <td>{{ user.first_name }}</td>
+                  <td>{{ user.middle_name }}</td>
+                  <td>{{ user.last_name }}</td>
+                  <td>{{ user.role }}</td>
+                  <td>{{ user.contact }}</td>
+                  <td>{{ user.username }}</td>
+
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
           </div>
         </div>
+        <div class="view_appointment text">
+          <div class="title">Appointment</div>
+          <!-- table here -->
+
+          <div class="table-content">
+            <table cellspacing="0" id="view_customer_table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Full Name</th>
+                  <th rowspan="2">Contact</th>
+                  <th rowspan="2">Date</th>
+                  <th rowspan="2">Time</th>
+                  <th rowspan="2">Category</th>
+                  <th rowspan="2">Description</th>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Pokhara</td>
+                  <td>Lukla</td>
+                  <td>2020/04/12</td>
+
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Jomsom</td>
+                  <td>Pokhara</td>
+                  <td>2021/01/14</td>
+
+                </tr>
+
+                {% for customer in customers %}
+                <tr>
+                  <td>{{ customer.fullname }}</td>
+                  <td>{{ customer.contact }}</td>
+                  <td>{{ customer.date }}</td>
+                  <td>{{ customer.time }}</td>
+                  <td>{{ customer.category }}</td>
+                  <td>{{ customer.description }}</td>
+
+
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+        <div class="notice_vacancy text">
+          <div class="title">View Notice Vacancy Publish</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores error neque, officia excepturi dolores
+            quis dolor, architecto iusto deleniti a soluta nostrum. Fuga reiciendis beatae, dicta voluptatem, vitae
+            eligendi maxime accusamus. Amet totam aut odio velit cumque autem neque sequi provident mollitia, nisi
+            sunt
+            maiores facilis debitis in officiis asperiores saepe quo soluta laudantium ad non quisquam! Repellendus
+            culpa necessitatibus aliquam quod mollitia perspiciatis ducimus doloribus perferendis autem, omnis,
+            impedit,
+            veniam qui dolorem? Ipsam nihil assumenda, sit ratione blanditiis eius aliquam libero iusto, dolorum aut
+            perferendis modi laboriosam sint dolor.</p>
+        </div>
+        <div class="intro text">
+          <div class="title">View Introduction</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore magnam vitae inventore blanditiis nam
+            tenetur voluptates doloribus error atque reprehenderit, necessitatibus minima incidunt a eius corrupti
+            placeat, quasi similique deserunt, harum? Quia ut impedit ab earum expedita soluta repellat perferendis
+            hic
+            tempora inventore, accusantium porro consequuntur quisquam et assumenda distinctio dignissimos doloremque
+            enim nemo delectus deserunt! Ullam perspiciatis quae aliquid animi quam amet deleniti, at dolorum tenetur,
+            tempore laborum.</p>
+        </div>
+        <div class="add_notice text">
+          <div class="title">Add Notice Vacancy</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus incidunt possimus quas ad, sit
+            nam
+            veniam illo ullam sapiente, aspernatur fugiat atque. Laboriosam libero voluptatum molestiae veniam earum
+            quisquam, laudantium aperiam, eligendi dicta animi maxime sunt non nisi, ex, ipsa! Soluta ex, quibusdam
+            voluptatem distinctio asperiores recusandae veritatis optio dolorem illo nesciunt quos ullam, dicta
+            numquam
+            ipsam cumque sed. Blanditiis omnis placeat, enim sit dicta eligendi voluptatibus laborum consectetur
+            repudiandae tempora numquam molestiae rerum mollitia nemo. Velit perspiciatis, nesciunt, quo illo quas
+            error
+            debitis molestiae et sapiente neque tempore natus?</p>
+        </div>
+        <div class="add_intro text">
+          <div class="title">Add Introduction</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus incidunt possimus quas ad, sit
+            nam
+            veniam illo ullam sapiente, aspernatur fugiat atque. Laboriosam libero voluptatum molestiae veniam earum
+            quisquam, laudantium aperiam, eligendi dicta animi maxime sunt non nisi, ex, ipsa! Soluta ex, quibusdam
+            voluptatem distinctio asperiores recusandae veritatis optio dolorem illo nesciunt quos ullam, dicta
+            numquam
+            ipsam cumque sed. Blanditiis omnis placeat, enim sit dicta eligendi voluptatibus laborum consectetur
+            repudiandae tempora numquam molestiae rerum mollitia nemo. Velit perspiciatis, nesciunt, quo illo quas
+            error
+            debitis molestiae et sapiente neque tempore natus?</p>
+        </div>
+
       </div>
-    
+    </div>
+
 </body>
 
 {% endblock %}
