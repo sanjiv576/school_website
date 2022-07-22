@@ -1,0 +1,43 @@
+{% extends "common_create.html" %}
+
+{% block content %}
+<form action="/user/updateIntro/{{ data.intro_id }}" method="POST" enctype="multipart/form-data">
+    <div class="col-lg-12 col-md-12 col-12">
+        <h2 class="text-center">Update introduction section</h2>
+
+        <!-- for showing error message -->
+        {% if error %}
+
+        <div class="alert alert-danger" role="alert" id="msg">
+            {{error}}
+        </div>
+        {% endif %}
+
+        {% csrf_token %}
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Write a title" id="floatingTextarea" name="intro_title" value="{{ data.intro_title }}" required></textarea>
+            <label for="floatingTextarea">Title</label>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" name="intro_image"  required>
+            <img src="/{{ data.intro_image }}" alt="cover image" />
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" value="{{ data.intro_description }}" placeholder="Write description" id="floatingTextarea" name="intro_desc" required></textarea>
+            <label for="floatingTextarea">Description</label>
+          </div>
+
+        <small class="form-text text-info" id="help">Note: * fields are required.</small>
+
+        <br><br>
+        <button class="btn btn-primary text-center" type="submit">Update</button>
+
+    </div>
+</form>
+
+{% endblock %}
