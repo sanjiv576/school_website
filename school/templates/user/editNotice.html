@@ -4,7 +4,7 @@
 <form action="/user/updateNotice/{{ data.notice_id }}" method="POST" enctype="multipart/form-data">
 
     <div class="col-lg-12 col-md-12 col-12">
-        <h2 class="text-center">Add Notice | Vacancy</h2>
+        <h2 class="text-center">Update Notice | Vacancy</h2>
 
         <!-- for showing error message -->
         {% if error %}
@@ -44,9 +44,13 @@
         <small class="form-text text-info" id="help">Note: * fields are required.</small>
 
         <br><br>
-        <button class="btn btn-primary text-center" type="submit">Publish</button>
+        <button class="btn btn-primary text-center" type="submit">Update</button>
 
     </div>
 </form>
+
+
+<br>
+<a href="/user/admin"> Back </a>
 
 {% endblock %}

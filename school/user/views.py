@@ -5,8 +5,10 @@ from authenticate.models import UserInfo
 from user.models import Notice_Vacancy, Intro
 from user.forms import NoticeForm, IntroForm
 from authenticate.forms import UserForm
-
+from django.contrib.auth.decorators import login_required
 # opens admin panel and shows data 
+
+@login_required(login_url='/home/home')
 def adminPanel(request):
 
     users = UserInfo.objects.all()
@@ -14,20 +16,24 @@ def adminPanel(request):
     # return render(request, 'user/adminDashboard.html', {'users': users}, {'notice_details': notice_details})
     return render(request, 'user/adminDashboard.html', {'users': users})
 
+
 def viewNotice(request):
     notice_details = Notice_Vacancy.objects.all()
     return render(request, 'user/adminDashboard.html', {'notice_details': notice_details})
 
+@login_required(login_url='/home/home')
 def viewCustomer(request):
     users = UserInfo.objects.all()
     return render(request, 'user/adminDashboard.html', {'users': users})
 
+@login_required(login_url='/home/home')
 def viewAppointment(request):
 
     # here appointment required not notice
     notice_details = Notice_Vacancy.objects.all()
     return render(request, 'user/adminDashboard.html', {'notice_details': notice_details})
 
+@login_required(login_url='/home/home')
 def viewIntro(request):
     
     intros = Intro.objects.all()
@@ -35,6 +41,7 @@ def viewIntro(request):
 
 
 # save notice_vacancy
+@login_required(login_url='/home/home')
 def addNotice(request):
     print("This is adding notice section/function")
     print(request.method)
@@ -82,6 +89,8 @@ def addNotice(request):
     return render(request, 'user/addNotice.html')
 
 # save recently added introduction section
+
+@login_required(login_url='/home/home')
 def addIntro(request):
 
 
@@ -116,6 +125,8 @@ def addIntro(request):
 
 
 # for editing logic
+
+@login_required(login_url='/home/home')
 def editNotice(request, c_id):
     
     data = Notice_Vacancy.objects.get(notice_id=c_id)
@@ -133,6 +144,7 @@ def editIntro(request, c_id):
 
 # for updating logic
 
+@login_required(login_url='/home/home')
 def updateIntro(request, c_id):
 
     success_msg = None
@@ -155,6 +167,7 @@ def updateIntro(request, c_id):
 
         return render(request, "user/adminDashboard.html", {'messages': success_msg})
 
+@login_required(login_url='/home/home')
 def updateNotice(request, c_id):
 
     success_msg = None
@@ -182,6 +195,8 @@ def updateNotice(request, c_id):
         return render(request, "user/adminDashboard.html", {'messages': success_msg})
 
 # delete from the database
+
+@login_required(login_url='/home/home')
 def deleteIntro(request, c_id):
 
     data = Intro.objects.get(intro_id=c_id)
@@ -192,6 +207,7 @@ def deleteIntro(request, c_id):
     return render(request, "user/adminDashboard.html", {'messages': success_msg})
 
 
+@login_required(login_url='/home/home')
 def deleteNotice(request, c_id):
 
     data = Notice_Vacancy.objects.get(notice_id=c_id)
