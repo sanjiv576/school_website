@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  
+  font-family: 'Poppins', sans-serif;
+}
+/* body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dad3f8;
+} */
+::selection{
+  background: #6d50e2;
+  color: #fff;
+}
+.container{
+  max-width: 100%;
+  width: 100%;
+  padding: 8px;
+  background: grey;
+  height: 100vh;
+  /* border-radius: 12px; */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .topic{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.container img {
+  width: 150px;
+  height: 100px;
+  padding: 8px;
+  margin-left: 30px;
+  border-radius: 8p
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* left tabs */
+.content .list{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 50px;
+  position: relative;
+}
+.content .list label{
+  height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+
+/* for logout button */
+.content .list button {
+  background: transparent;
+  background-color: none;
+  outline: none;
+  border: none;
+}
+
+/* for hovering effects */
+#view_customer:checked ~ .list label.view_customer,
+#view_appointment:checked ~ .list label.view_appointment,
+#notice_vacancy:checked ~ .list label.notice_vacancy,
+#intro:checked ~ .list label.intro,
+#add_notice:checked ~ .list label.add_notice,
+#add_intro:checked ~ .list label.add_intro, 
+#logout:checked ~ .list label.logout
+{
+  color: #fff;
+}
+.content .list label:hover, 
+.content .list button:hover,
+.content .list a:hover{
+  color: #6d50e2;
+}
+
+/* for sliding each content of each tab */
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: #6d50e2;
+  transition: all 0.4s ease;
+}
+
+/* for position of tabs */
+#view_customer:checked ~ .list .slider{
+  top: 0;
+}
+#view_appointment:checked ~ .list .slider{
+  top: 60px;
+}
+#notice_vacancy:checked ~ .list .slider{
+  top: 120px;
+}
+#intro:checked ~ .list .slider{
+  top: 180px;
+}
+#add_notice:checked ~ .list .slider{
+  top: 240px;
+}
+#add_intro:checked ~ .list .slider{
+  top: 300px;
+}
+.content .text-content{
+  width: 80%;
+  height: 100%;
+}
+.content .text{
+  display: none;
+}
+.content .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.content .text p{
+  text-align: justify;
+}
+.content .text-content .view_customer{
+  display: block;
+}
+#view_customer:checked ~ .text-content .view_customer,
+#view_appointment:checked ~ .text-content .view_appointment,
+#notice_vacancy:checked ~ .text-content .notice_vacancy,
+#intro:checked ~ .text-content .intro,
+#add_notice:checked ~ .text-content .add_notice,
+#add_intro:checked ~ .text-content .add_intro
+{
+  display: block;
+}
+#view_appointment:checked ~ .text-content .view_customer,
+#notice_vacancy:checked ~ .text-content .view_customer,
+#intro:checked ~ .text-content .view_customer,
+#add_notice:checked ~ .text-content .view_customer,
+#add_intro:checked ~ .text-content .view_customer
+{
+  display: none;
+}
+.content input{
+  display: none;
+}
