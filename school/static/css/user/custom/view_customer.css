@@ -42,6 +42,17 @@ table tbody tr:hover {
 }
 
 
+/* images */
+
+.table-content img{
+    padding:8px;
+    height: 50px;
+    width: 50px;
+    max-height: 70px;
+    max-width: 70px;
+    border-radius: 20px;
+  }
+
 
 
 /* for search */

@@ -19,15 +19,8 @@ class UserInfo(models.Model):
 
     class Meta:
         db_table = "UserInfo"
+    
 
-# class Notice_Academic(models.Model):
-#     notice_id = models.AutoField(auto_created=True, primary_key = True)
-#     title = models.CharField(max_length=30)
-#     publish_date = models.CharField(models.DateTime, max_length=20, default=datetime.utcnow)
-#     image = models.FileField(upload_to="static/images/user", default="default.jpg")
-#     description = models.CharField(max_length=80, null=False)
-#     category = models.CharField(max_length=30, null=False)
-#     user_id = models.ForeignKey(UserInfo, default=None)
+    def __str__(self):
+        return "%s %s" % (self.user_id, self.first_name)
 
-#     class Meta:
-#         db_table = "notice_academic"
