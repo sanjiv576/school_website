@@ -21,6 +21,7 @@ def login_page(request):
 
         # username = request.POST['username']
         # password = request.POST['password']
+        role = request.POST['form-select']
         # user = authenticate(request, username=username, password=password)
         user = authenticate(request,
                 username=request.POST['username'],
@@ -36,12 +37,17 @@ def login_page(request):
             login(request, user)
             message = "Login successfully"
             print(message)
-            # open admin panel
-            return redirect('/home/home')
-        else :
-            print("User account is not found")
-            error_msg = "Provided account has not been registered or something went wrong."
-            return render(request, 'home/homepage.html', {'error': error_msg})
+           
+            # if role == admin , then, open admin panel, 
+            # if role == student, teacher then open it respectively (which is future work)
+            if role == "Admin":
+                return redirect('/user/admin')
+            else:
+                pass
+
+        print("User account is not found")
+        error_msg = "Provided account has not been registered or something went wrong."
+        return render(request, 'home/homepage.html', {'error': error_msg})
 
     # messages.add_message(request, messages.INFO, 'Hello world.')
     # messages.success(request, 'Profile details updated.')
@@ -142,7 +148,7 @@ def register_page(request):
             login_msg = first_name + ", your account has been created successfully. Now login."
             print(login_msg)
 
-            return redirect("/home/home", {'message': login_msg})
+            return redirect("/user/admin")
 
         else : 
             return render(request, "authenticate/register.html", {'error': error_msg})
