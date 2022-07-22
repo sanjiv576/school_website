@@ -44,19 +44,19 @@
       <div class="list">
         <label for="view_customer" class="view_customer">
           <i class="fa-solid fa-user-check"></i>
-          <span class="title">View Customer</span>
+          <span class="title"><a href="/user/viewCustomer">View Customer</a></span>
         </label>
         <label for="view_appointment" class="view_appointment">
           <span class="icon"><i class="fas fa-blog"></i></span>
-          <span class="title">Appointment</span>
+          <span class="title"><a href="/user/viewAppointment">Appointment</a></span>
         </label>
         <label for="notice_vacancy" class="notice_vacancy">
           <span class="icon"><i class="far fa-envelope"></i></span>
-          <span class="title">View|Edit Notice</span>
+          <span class="title"><a href="/user/viewNotice">View|Edit Notice</a></span>
         </label>
         <label for="intro" class="intro">
           <span class="icon"><i class="fas fa-code"></i></span>
-          <span class="title">View|Edit Intro</span>
+          <span class="title"><a href="/user/viewIntro">View | Edit Intro</a></span>
         </label>
         <label for="add_notice" class="add_notice">
           <span class="icon"><i class="fa-solid fa-comment-sms"></i></span>
@@ -236,23 +236,20 @@
                   <th rowspan="2">Published date</th>
                   <th rowspan="2">Category</th>
                   <th rowspan="2">Description</th>
+                  <th rowspan="2">Action</th>
 
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Pokhara</td>
-                  <td>Lukla</td>
-                  <td>2020/04/12</td>
+                
 
-                </tr>
-
-                {% for user in users %}
+                {% for notice_detail in notice_details %}
                 <tr>
-                  <td> <img src="/{{ customer.image }} " width="100"></td>
-                  <td>{{ user.title }}</td>
-                  <td>{{ user.published_date }}</td>
-                  <td>{{ user.category }}</td>
-                  <td>{{ user.description }}</td>
+                  <!-- <td> <img src="/{{ notice_detail.image }} "></td> -->
+                  <td> <img src="{% static 'images/user/default.png' %}"></td>
+                  <td>{{ notice_detail.title }}</td>
+                  <td>{{ notice_detail.publish_date }}</td>
+                  <td>{{ notice_detail.category }}</td>
+                  <td>{{ notice_detail.description }}</td>
+                  <td><a href="/user/editNotice/{{notice_detail.notice_id}}"> Edit</a>  | <a href="/user/deleteNotice/{{ notice_detail.notice_id }}">Delete</a></td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -269,19 +266,19 @@
               <thead>
                 <tr>
                   <th rowspan="2">Image</th>
+                  <th rowspan="2">Title</th>
                   <th rowspan="2">Description</th>
+                  <th rowspan="2">Action</th>
 
               <tbody>
+                
+                {% for intro in intros %}
                 <tr>
-                  <td>1</td>
-                  <td>Pokhara</td>
-
-                </tr>
-
-                {% for user in users %}
-                <tr>
-                  <td> <img src="/{{ customer.image }} " width="100"></td>
-                  <td>{{ user.description }}</td>
+                  <!-- <td> <img src="/{{ intro.intro_image }} "></td> -->
+                  <td> <img src="{% static 'images/intro/default.jpeg' %}"></td>
+                  <td>{{ intro.intro_title }}</td>
+                  <td>{{ intro.intro_description }}</td>
+                  <td><a href="/user/editIntro/{{intro.intro_id}}"> Edit</a>  | <a href="/user/deleteIntro/{{ intro.intro_id }}">Delete</a></td>
                 </tr>
                 {% endfor %}
               </tbody>
