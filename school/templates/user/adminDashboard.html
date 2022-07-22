@@ -68,13 +68,26 @@
         </label>
         <label for="logout" class="logout">
           <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-          <button><span class="title">Logout</span></button>
+          <!-- <button><span class="title">Logout</span></button> -->
+          <a href="/authenticate/logout">Logout</a>
         </label>
         <div class="slider"></div>
       </div>
 
       <!-- main right content -->
       <div class="text-content">
+
+
+        <!-- for showing success message -->
+      {% if messages %}
+
+      <div class="alert alert-success" role="alert" id="msg">
+        {{messages}}
+      </div>
+      {% endif %}
+
+       
+        <!-- shows customer/users feature -->
         <div class="view_customer text">
           <div class="title">View Customer</div>
 
@@ -114,25 +127,10 @@
               </thead>
 
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Pokhara</td>
-                  <td>Lukla</td>
-                  <td>2020/04/12</td>
-
-                </tr>
-
-                <tr>
-                  <td>4</td>
-                  <td>Jomsom</td>
-                  <td>Pokhara</td>
-                  <td>2021/01/14</td>
-
-                </tr>
-
+                
                 {% for user in users %}
                 <tr>
-                  <td> <img src="/{{ customer.image }} " width="100"></td>
+                  <td> <img src="/{{ user.image }} "/></td>
                   <td>{{ user.first_name }}</td>
                   <td>{{ user.middle_name }}</td>
                   <td>{{ user.last_name }}</td>
