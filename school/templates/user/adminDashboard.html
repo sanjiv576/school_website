@@ -78,8 +78,28 @@
         <div class="view_customer text">
           <div class="title">View Customer</div>
 
-          <!-- table here -->
+          <!-- search bar -->
 
+          <input type="text" placeholder="Search..">
+
+          <!-- sorting features -->
+
+          <form action="">
+
+            <select class="form-selection" aria-label="Disabled select example" id="sorting" name="sort">
+              <option selected>Sort Column By</option>
+              <option value="firstName">First name</option>
+              <option value="lastName">Last name</option>
+              <option value="contact">Contact</option>
+              <option value="username">Username</option>
+            </select>
+            <!-- <input type="submit" value="Sort"/> -->
+            <button type="submit" class="btn btn-primary">Sort</button>
+          </form>
+
+          <br><br>
+
+          <!-- table here -->
           <div class="table-content">
             <table cellspacing="0" id="view_customer_table">
               <thead>
@@ -129,8 +149,23 @@
         </div>
         <div class="view_appointment text">
           <div class="title">Appointment</div>
-          <!-- table here -->
 
+          <!-- sorting features -->
+          <form action="">
+            <select class="form-selection" aria-label="Disabled select example" id="sorting" name="sort">
+              <option selected>Sort Column By</option>
+              <option value="date">Date</option>
+              <option value="time">Time</option>
+              <option value="category">Category</option>
+              <option value="fullname">Full name</option>
+            </select>
+            <!-- <input type="submit" value="Sort"/> -->
+            <button type="submit" class="btn btn-primary">Sort</button>
+          </form>
+
+          <br><br>
+
+          <!-- table here -->
           <div class="table-content">
             <table cellspacing="0" id="view_customer_table">
               <thead>
@@ -178,52 +213,97 @@
           </div>
         </div>
         <div class="notice_vacancy text">
-          <div class="title">View Notice Vacancy Publish</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores error neque, officia excepturi dolores
-            quis dolor, architecto iusto deleniti a soluta nostrum. Fuga reiciendis beatae, dicta voluptatem, vitae
-            eligendi maxime accusamus. Amet totam aut odio velit cumque autem neque sequi provident mollitia, nisi
-            sunt
-            maiores facilis debitis in officiis asperiores saepe quo soluta laudantium ad non quisquam! Repellendus
-            culpa necessitatibus aliquam quod mollitia perspiciatis ducimus doloribus perferendis autem, omnis,
-            impedit,
-            veniam qui dolorem? Ipsam nihil assumenda, sit ratione blanditiis eius aliquam libero iusto, dolorum aut
-            perferendis modi laboriosam sint dolor.</p>
+          <div class="title">View | Edit | Delete Notice Vacancy Publish</div>
+
+          <!-- sorting features -->
+          <form action="">
+            <select class="form-selection" aria-label="Disabled select example" id="sorting" name="sort">
+              <option selected>Sort Column By</option>
+              <option value="date">Date</option>
+              <option value="title">title</option>
+              <option value="category">Category</option>
+            </select>
+            <!-- <input type="submit" value="Sort"/> -->
+            <button type="submit" class="btn btn-primary">Sort</button>
+          </form>
+
+          <br><br>
+          <!-- table here -->
+          <div class="table-content">
+            <table cellspacing="0" id="view_customer_table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Image</th>
+                  <th rowspan="2">Title</th>
+                  <th rowspan="2">Published date</th>
+                  <th rowspan="2">Category</th>
+                  <th rowspan="2">Description</th>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Pokhara</td>
+                  <td>Lukla</td>
+                  <td>2020/04/12</td>
+
+                </tr>
+
+                {% for user in users %}
+                <tr>
+                  <td> <img src="/{{ customer.image }} " width="100"></td>
+                  <td>{{ user.title }}</td>
+                  <td>{{ user.published_date }}</td>
+                  <td>{{ user.category }}</td>
+                  <td>{{ user.description }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
         </div>
         <div class="intro text">
-          <div class="title">View Introduction</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore magnam vitae inventore blanditiis nam
-            tenetur voluptates doloribus error atque reprehenderit, necessitatibus minima incidunt a eius corrupti
-            placeat, quasi similique deserunt, harum? Quia ut impedit ab earum expedita soluta repellat perferendis
-            hic
-            tempora inventore, accusantium porro consequuntur quisquam et assumenda distinctio dignissimos doloremque
-            enim nemo delectus deserunt! Ullam perspiciatis quae aliquid animi quam amet deleniti, at dolorum tenetur,
-            tempore laborum.</p>
+          <div class="title">View | Edit | Delete Introduction</div>
+
+          <!-- table here -->
+          <div class="table-content">
+            <table cellspacing="0" id="view_customer_table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Image</th>
+                  <th rowspan="2">Description</th>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Pokhara</td>
+
+                </tr>
+
+                {% for user in users %}
+                <tr>
+                  <td> <img src="/{{ customer.image }} " width="100"></td>
+                  <td>{{ user.description }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
         </div>
         <div class="add_notice text">
-          <div class="title">Add Notice Vacancy</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus incidunt possimus quas ad, sit
-            nam
-            veniam illo ullam sapiente, aspernatur fugiat atque. Laboriosam libero voluptatum molestiae veniam earum
-            quisquam, laudantium aperiam, eligendi dicta animi maxime sunt non nisi, ex, ipsa! Soluta ex, quibusdam
-            voluptatem distinctio asperiores recusandae veritatis optio dolorem illo nesciunt quos ullam, dicta
-            numquam
-            ipsam cumque sed. Blanditiis omnis placeat, enim sit dicta eligendi voluptatibus laborum consectetur
-            repudiandae tempora numquam molestiae rerum mollitia nemo. Velit perspiciatis, nesciunt, quo illo quas
-            error
-            debitis molestiae et sapiente neque tempore natus?</p>
+
+          <!-- add notice feature -->
+          <fieldset>
+            <h5 class="text-center">Click here to <a href="/user/addNotice"> publish</a> notice.</h5>
+          </fieldset>  
+          
         </div>
         <div class="add_intro text">
-          <div class="title">Add Introduction</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus incidunt possimus quas ad, sit
-            nam
-            veniam illo ullam sapiente, aspernatur fugiat atque. Laboriosam libero voluptatum molestiae veniam earum
-            quisquam, laudantium aperiam, eligendi dicta animi maxime sunt non nisi, ex, ipsa! Soluta ex, quibusdam
-            voluptatem distinctio asperiores recusandae veritatis optio dolorem illo nesciunt quos ullam, dicta
-            numquam
-            ipsam cumque sed. Blanditiis omnis placeat, enim sit dicta eligendi voluptatibus laborum consectetur
-            repudiandae tempora numquam molestiae rerum mollitia nemo. Velit perspiciatis, nesciunt, quo illo quas
-            error
-            debitis molestiae et sapiente neque tempore natus?</p>
+          <!-- add introduction feature -->
+          <fieldset>
+            <h5 class="text-center">Click here to <a href="/user/addIntro"> write </a> introduction section.</h5>
+          </fieldset>
         </div>
 
       </div>

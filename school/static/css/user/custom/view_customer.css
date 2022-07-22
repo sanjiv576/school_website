@@ -29,3 +29,68 @@ table tbody tr:hover {
     background-color: rgb(124, 114, 114);
     color: white;
 }
+
+
+/* for sorting css */
+
+.form-selection {
+    border: 1px solid #222;
+    outline: none;
+    padding: 8px;
+    width: 150px;
+    font-size: 0.9em;
+}
+
+
+
+
+/* for search */
+
+
+.searchbar {
+    position: relative;
+}
+
+/* Styling the search box where the
+    input would be given */
+.searchbar input[type="text"] {
+    border: 0;
+    padding: 0;
+    width: 0px;
+    height: 35px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Styling the search bar icon */
+.searchbar .icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 100%;
+    background: none;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 0.5s 0.3s ease;
+}
+
+.searchbar .icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.searchbar .icon.active {
+    background: #5f6466;
+    transition: all 0.3s ease;
+}
+
+.searchbar input[type="text"].active {
+    width: 250px;
+    padding: 0 10px;
+    transition: all 0.5s 0.2s ease;
+}
