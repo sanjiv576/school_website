@@ -22,5 +22,6 @@ urlpatterns = [
     # path('register/', include('home.urls')),
     path('home/', include('home.urls')),
     path('authenticate/', include('authenticate.urls')),
+    path('user/', include('user.urls')),
     
 ]
