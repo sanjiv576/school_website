@@ -68,14 +68,18 @@
 
 /* for hovering effects */
 #view_customer:checked ~ .list label.view_customer,
+#view_customer:checked ~ .list label.view_customer a,
 #view_appointment:checked ~ .list label.view_appointment,
+#view_appointment:checked ~ .list label.view_appointment a,
 #notice_vacancy:checked ~ .list label.notice_vacancy,
+#notice_vacancy:checked ~ .list label.notice_vacancy a,
 #intro:checked ~ .list label.intro,
+#intro:checked ~ .list label.intro a,
 #add_notice:checked ~ .list label.add_notice,
 #add_intro:checked ~ .list label.add_intro, 
 #logout:checked ~ .list label.logout
 {
-  color: #fff;
+  color: #fff!important;
 }
 .content .list label:hover, 
 .content .list button:hover,
@@ -151,4 +155,12 @@
 }
 .content input{
   display: none;
+}
+
+
+/* hiding anchor */
+
+.list a{
+  text-decoration: none!important;
+  color:black;
 }

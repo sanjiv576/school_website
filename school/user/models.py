@@ -16,3 +16,15 @@ class Notice_Vacancy(models.Model):
 
     class Meta:
         db_table = "Notice_Vacancy"
+
+# model for notice and vacancy
+class Intro(models.Model):
+    intro_id = models.AutoField(auto_created=True, primary_key = True)
+    intro_title = models.CharField(max_length=30)
+    intro_image = models.FileField(upload_to="static/images/intro", default="default.jpeg")
+    intro_description = models.TextField(max_length=200, null=False)
+    
+    user_id = models.ForeignKey(UserInfo, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "Intro"
