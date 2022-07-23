@@ -77,33 +77,33 @@ function verifyDetails(){
     var password2Val = password2.value.trim();
 
 
-    // if(firstNameVal === ''){
-    //     erro_msg = "* First Name is required, which cannot be empty."
-    //     popAlert(erro_msg);
-    //     setError(firstName,erro_msg);
-    // }
-    // else {
-    //     setError(firstName);
-    // }
+    if(firstNameVal === ''){
+        erro_msg = "* First Name is required, which cannot be empty."
+        popAlert(erro_msg);
+        setError(firstName,erro_msg);
+    }
+    else {
+        setError(firstName);
+    }
 
-    // if(lastNameVal === ''){
-    //     erro_msg = " * Last Name is required, which cannot be empty."
-    //     popAlert(erro_msg);
-    //     setError(lastName,erro_msg);
-    // }
-    // else {
-    //     setError(lastName);
-    // }
+    if(lastNameVal === ''){
+        erro_msg = " * Last Name is required, which cannot be empty."
+        popAlert(erro_msg);
+        setError(lastName,erro_msg);
+    }
+    else {
+        setError(lastName);
+    }
 
 
-    // if(contactVal === ''){
-    //     erro_msg = " * Contact is required, which cannot be empty."
-    //     popAlert(erro_msg);
-    //     setError(contact,erro_msg);
-    // }
-    // else {
-    //     setError(contact);
-    // }
+    if(contactVal === ''){
+        erro_msg = " * Contact is required, which cannot be empty."
+        popAlert(erro_msg);
+        setError(contact,erro_msg);
+    }
+    else {
+        setError(contact);
+    }
 
 
     if(roleVal === '' || roleVal == "Choose role"){
@@ -116,9 +116,36 @@ function verifyDetails(){
         setError(role);
     }
 
+    if(firstNameVal === '' && lastNameVal === '' && contactVal === '' &&  roleVal === 'Choose role' && usernameVal === '' && passwordVal === '' && password2Val === ''){
+        
+        erro_msg = "* fields are required, cannot be empty."
+        
+        const all_fields = ["firstName", 'lastName', 'contact', 'role', 'username', 'password', 'password2'];
+
+        // all_fields.forEach(emptyFields);
+        for(let i = 0; i < all_fields.length; i++){
+            
+            popAlert(all_fields[i],erro_msg);
+        }
+        popAlert(erro_msg);
+
+
+        
+    }
+
+
+    // if(passwordVal == ''){
+    //     erro_msg = " * Password is required, which cannot be empty."
+    //     popAlert(erro_msg);
+    //     setError(password, erro_msg);
+    // }
+    // else {
+    //     setSuccess(password);
+    // }
+
     // if(usernameVal === ''){
     //     erro_msg = " * Username is required, which cannot be empty."
-    //     popAlert(erro_msg);
+    //     // popAlert(erro_msg);
     //     setError(username,erro_msg);
     // }
 
@@ -127,26 +154,16 @@ function verifyDetails(){
     // }
 
 
-    checkFormValidation(firstNameVal, firstName, 'First Name');
-    checkFormValidation(lastNameVal, lastName, 'Last Name');
-    checkFormValidation(contactVal, contact, 'Contact');
-    checkFormValidation(roleVal, role, 'Role');
-    checkFormValidation(usernameVal, username, 'Username');
+    // checkFormValidation(firstNameVal, firstName, 'First Name');
+    // checkFormValidation(lastNameVal, lastName, 'Last Name');
+    // checkFormValidation(contactVal, contact, 'Contact');
+    // checkFormValidation(roleVal, role, 'Role');
+    // checkFormValidation(usernameVal, username, 'Username');
     // checkFormValidation(passwordVal, password, 'Password');
     // checkFormValidation(password2Val, password2, 'Confirm Password');
     
 
 
-    if(firstNameVal === '' && lastNameVal === '' && contactVal === '' &&  roleVal === 'Choose role' && usernameVal === '' && passwordVal === '' && password2Val === ''){
-        
-        erro_msg = "* fields are required, cannot be empty."
-        popAlert(erro_msg);
-        // const all_fields = ["firstName", 'lastName', 'contact', 'role', 'username', 'password', 'password2'];
-
-        // all_fields.forEach(emptyFields);
-
-
-        
-    }
+    
 
 }
