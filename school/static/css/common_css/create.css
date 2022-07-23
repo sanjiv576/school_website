@@ -31,8 +31,8 @@ label::after {
 }
 
 .container {
-    max-width: 950px;
-    width: 100%;
+    max-width: 650px!important;
+    /* width: 100%; */
     padding: 40px 50px 40px 40px;
     background: #fff;
     margin: 0 20px;

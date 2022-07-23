@@ -2,6 +2,7 @@ from datetime import datetime
 from unicodedata import category
 from django.shortcuts import render, redirect
 from authenticate.models import UserInfo
+from customer.models import Appointment
 from user.models import Notice_Vacancy, Intro
 from user.forms import NoticeForm, IntroForm
 from authenticate.forms import UserForm
@@ -30,8 +31,8 @@ def viewCustomer(request):
 def viewAppointment(request):
 
     # here appointment required not notice
-    notice_details = Notice_Vacancy.objects.all()
-    return render(request, 'user/adminDashboard.html', {'notice_details': notice_details})
+    customers = Appointment.objects.all()
+    return render(request, 'user/adminDashboard.html', {'customers': customers})
 
 @login_required(login_url='/home/home')
 def viewIntro(request):
@@ -43,7 +44,7 @@ def viewIntro(request):
 # save notice_vacancy
 @login_required(login_url='/home/home')
 def addNotice(request):
-    print("This is adding notice section/function")
+    
     print(request.method)
 
     success_msg = None
@@ -58,7 +59,7 @@ def addNotice(request):
         title = request.POST['title']
         publish_date = datetime.date(datetime.now())
         category = request.POST['category']
-        # post_image = request.POST['post_image']
+        post_image = request.POST.get('post_image')
         description = request.POST['description']
         print(publish_date)
 
@@ -66,7 +67,7 @@ def addNotice(request):
             title = title,
             publish_date = publish_date,
             category = category,
-            # post_image = post_image,
+            post_image = post_image,
             description = description
 
         ).save()
@@ -77,12 +78,7 @@ def addNotice(request):
         success_msg = "Your post has been successfully published ."
 
         return render(request, "user/adminDashboard.html", {'messages': success_msg})
-        # print(publish_date)
-        # print(title)
-        # print(category)
-        # print(description)
-        # print(request.FILES)
-        # print(data)
+        
 
     # if not success_msg:
     #     error_msg = "Something went wrong. Try again."
