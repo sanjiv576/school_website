@@ -7,6 +7,7 @@
 <!-- added custom css -->
 <link rel="stylesheet" href="{% static 'css/user/custom/adminDashboard.css' %}">
 <link rel="stylesheet" href="{% static 'css/user/custom/view_customer.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/common_css/pagination.css' %}">
 
 <!-- Fontawesome CDN Link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -144,6 +145,10 @@
             </table>
 
           </div>
+
+          <!-- adding pagination -->
+          {% include "includes/pagination.html" %}
+
         </div>
         <div class="view_appointment text">
           <div class="title">Appointment</div>
@@ -177,25 +182,10 @@
               </thead>
 
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Pokhara</td>
-                  <td>Lukla</td>
-                  <td>2020/04/12</td>
-
-                </tr>
-
-                <tr>
-                  <td>4</td>
-                  <td>Jomsom</td>
-                  <td>Pokhara</td>
-                  <td>2021/01/14</td>
-
-                </tr>
-
+               
                 {% for customer in customers %}
                 <tr>
-                  <td>{{ customer.fullname }}</td>
+                  <td>{{ customer.fullName }}</td>
                   <td>{{ customer.contact }}</td>
                   <td>{{ customer.date }}</td>
                   <td>{{ customer.time }}</td>
@@ -209,6 +199,9 @@
             </table>
 
           </div>
+
+          <!-- adding pagination -->
+          {% include "includes/pagination.html" %}
         </div>
         <div class="notice_vacancy text">
           <div class="title">View | Edit | Delete Notice Vacancy Publish</div>
@@ -256,6 +249,10 @@
             </table>
 
           </div>
+
+          <!-- adding pagination -->
+          {% include "includes/pagination.html" %}
+          
         </div>
         <div class="intro text">
           <div class="title">View | Edit | Delete Introduction</div>
@@ -285,6 +282,9 @@
             </table>
 
           </div>
+
+          <!-- adding pagination -->
+          {% include "includes/pagination.html" %}
         </div>
         <div class="add_notice text">
 
