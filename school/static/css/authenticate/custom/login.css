@@ -181,7 +181,7 @@
 
     .myBrand {
 
-        background-image: url("../../../images/longKebsLogog.png");
+        background-image: url("../../../images/home/longKebsLogog.png");
         border-radius: 12%;
         overflow: hidden;
         /* margin-top: 0.5rem; */
@@ -214,7 +214,7 @@
 @media screen and (max-width: 520px) {
 
     .myBrand {
-        background-image: url("../../../images/longKebsLogog.png");
+        background-image: url("../../../images/home/longKebsLogog.png");
         height: 10%;
     }
 
