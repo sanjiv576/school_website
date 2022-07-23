@@ -98,17 +98,17 @@
 
           <!-- sorting features -->
 
-          <form action="">
+          <form action="/user/sortViewCustomer/{{sort}}">
 
             <select class="form-selection" aria-label="Disabled select example" id="sorting" name="sort">
               <option selected>Sort Column By</option>
-              <option value="firstName">First name</option>
-              <option value="lastName">Last name</option>
+              <option value="first_name">First name</option>
+              <option value="last_name">Last name</option>
               <option value="contact">Contact</option>
               <option value="username">Username</option>
             </select>
             <!-- <input type="submit" value="Sort"/> -->
-            <button type="submit" class="btn btn-primary">Sort</button>
+            <button type="submit" class="btn btn-primary" disabled>Sort</button>
           </form>
 
           <br><br>
@@ -252,7 +252,7 @@
 
           <!-- adding pagination -->
           {% include "includes/pagination.html" %}
-          
+
         </div>
         <div class="intro text">
           <div class="title">View | Edit | Delete Introduction</div>
