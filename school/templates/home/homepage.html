@@ -31,7 +31,7 @@
       <!-- for showing success message -->
       {% if message %}
 
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success msg" role="alert">
         <p class="text-success text-center"><strong>{{message}}</strong></p>
       </div>
       {% endif %}
@@ -39,7 +39,7 @@
       <!-- for showing error message -->
       {% if error %}
 
-      <div class="alert alert-danger" role="alert" id="msg">
+      <div class="alert alert-danger msg" role="alert">
         {{error}}
       </div>
       {% endif %}
@@ -285,8 +285,8 @@
   <!-- js for hiding error message -->
   <script>
     setTimeout(function () {
-      if ($('#msg').length > 0) {
-        $('#msg').remove();
+      if ($('.msg').length > 0) {
+        $('.msg').remove();
       }
     }, 5000)
   </script>
