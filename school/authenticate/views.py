@@ -13,14 +13,13 @@ from django.contrib.auth.models import User
 
 def login_page(request):
     
-    print("hello, checking validation")
-    print(request.method)
+    # print("hello, checking validation")
+    # print(request.method)
     # message = None
     if(request.method == 'POST'):
         error_msg = None
 
-        # username = request.POST['username']
-        # password = request.POST['password']
+        
         role = request.POST['form-select']
         # user = authenticate(request, username=username, password=password)
         user = authenticate(request,
@@ -49,11 +48,6 @@ def login_page(request):
         error_msg = "Provided account has not been registered or something went wrong."
         return render(request, 'home/homepage.html', {'error': error_msg})
 
-    # messages.add_message(request, messages.INFO, 'Hello world.')
-    # messages.success(request, 'Profile details updated.')
-    # messages = messages.success(request, 'Profile details updated.')
-    # messages = "Good job"
-
     messages.warning(request, "Login failed")
     return render(request, 'home/homepage.html')
 
@@ -69,19 +63,19 @@ def register_page(request):
         # Noter: right side is the name of field
 
         # now, getting each data from each field
-        first_name = request.POST['firstName']
-        middle_name = request.POST['middleName']
+        first_name = request.POST.get('firstName')
+        middle_name = request.POST.get('middleName')
 
         
-        last_name = request.POST['lastName']
-        contact = request.POST['contact']
+        last_name = request.POST.get('lastName')
+        contact = request.POST.get('contact')
 
         
-        role = request.POST['role']
-        username = request.POST['username']
+        role = request.POST.get('role')
+        username = request.POST.get('username')
 
-        password = request.POST['password']
-        confimPassword = request.POST['confirmPassword']
+        password = request.POST.get('password')
+        confimPassword = request.POST.get('confirmPassword')
                 
         form = UserForm(request.POST, request.FILES)
 
@@ -92,66 +86,67 @@ def register_page(request):
         
 
         # check provied contact detail is number/digit or not
-        for digit in contact:
-            if digit.isdigit():
-                validContact = True
-            else:
-                validContact = False
+        try:
+            for digit in contact:
+                if digit.isdigit():
+                    validContact = True
+                else:
+                    validContact = False
+        finally:
+            # make restrictions (server side validation)
 
-        # make restrictions (server side validation)
+            if len(first_name) <= 3 or len(last_name) <= 3:
+                error_msg = "First or last names cannot be lesser than 2 character."
+                
+            elif role == "Choose role":
+                error_msg = "Choose role as admin, student or teacher."
 
-        if len(first_name) <= 3 or len(last_name) <= 3:
-            error_msg = "First or last names cannot be lesser than 2 character."
-            
-        elif role == "Choose role":
-            error_msg = "Choose role as admin, student or teacher."
+            elif not validContact:
+                error_msg = "* Contact cannot be alphabets."
 
-        elif not validContact:
-             error_msg = "* Contact cannot be alphabets."
+            elif len(password) <= 5:
+                error_msg = "Password cannot be lesser than 6 character."
 
-        elif len(password) <= 5:
-            error_msg = "Password cannot be lesser than 6 character."
+            elif password != confimPassword:
+                error_msg = "Password and Confrim password does not match."
 
-        elif password != confimPassword:
-            error_msg = "Password and Confrim password does not match."
+            # if there is no error, which means valid info are provided
+            if not error_msg:
+                # saving content into the database
 
-        # if there is no error, which means valid info are provided
-        if not error_msg:
-            # saving content into the database
+                if middle_name == '':
+                    middle_name = None
+                
+                # first_name is the attribute of the table
+                # firstName is the name of the field
 
-            if middle_name == '':
-                middle_name = None
-            
-            # first_name is the attribute of the table
-            # firstName is the name of the field
+                UserInfo( 
+                    first_name = first_name,
+                    middle_name = middle_name,
+                    last_name = last_name,
+                    contact = contact,
+                    role = role,
+                    username = username, 
+                    password = password
+                ).save()
 
-            UserInfo( 
+                # for auth_user
+
+                User.objects.create_user(
                 first_name = first_name,
-                middle_name = middle_name,
                 last_name = last_name,
-                contact = contact,
-                role = role,
-                username = username, 
+                username = username,
                 password = password
-            ).save()
+                )
 
-            # for auth_user
+                
+                login_msg = first_name + ", your account has been created successfully. Now login."
+                print(login_msg)
 
-            User.objects.create_user(
-            first_name = request.POST['firstName'],
-            last_name = request.POST['lastName'],
-            username = request.POST['username'],
-            password = request.POST['password']
-            )
+                return render(request, "home/homepage.html", {'message': login_msg})
 
-            
-            login_msg = first_name + ", your account has been created successfully. Now login."
-            print(login_msg)
-
-            return redirect("/user/admin")
-
-        else : 
-            return render(request, "authenticate/register.html", {'error': error_msg})
+            else : 
+                return render(request, "authenticate/register.html", {'error': error_msg})
 
 
     return render(request, "authenticate/register.html")

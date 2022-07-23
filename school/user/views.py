@@ -214,3 +214,19 @@ def deleteNotice(request, c_id):
     return render(request, "user/adminDashboard.html", {'messages': success_msg})
 
     
+
+
+# sorting logic 
+
+def sortViewCustomer(request, sortedBy):
+    print(sortedBy)
+    print("sorting sorting sorting sortings orting sortingsorting sorting  ")
+    try:
+        users = UserInfo.objects.all().order_by(sortedBy).values()
+    
+    except:
+        users = UserInfo.objects.all()
+    
+    finally:
+        
+        return render(request, 'user/adminDashboard.html', {'users': users})
