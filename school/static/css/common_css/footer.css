@@ -1,0 +1,156 @@
+/* *********************** for middle part ************************ */
+
+.footer-content {
+    background-color: #333E53;
+    margin-top: 8px;
+    display: flex;
+}
+
+.footer-content>div {
+    margin: auto;
+    height: inherit;
+
+}
+/* ******* footer left content ********** */
+#left-footer-content {
+    width: 30%;
+    border-right: white;
+    border-width: 4px;
+}
+
+
+
+.footer-main{
+    /* background-color: red; */
+    width: 80%;
+    margin: auto auto auto auto;
+    height: inherit;
+}
+
+.footer-logo{
+    background-image: url('../../images/home/kebsLogo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100px;
+    background-position-x: center;
+    width: 100%;
+    height: 100px;
+    
+}
+
+.footer-logo-title{
+    text-align: center;
+    color:red;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.footer-logo-details {
+    color:white;
+    padding : 4px;
+}
+
+
+/* **************footer right content **************** */
+#right-footer-content {
+    /* background-color: red; */
+    width: 70%;
+}
+
+
+
+#footer-right-top {
+    /* background-color: grey; */
+    height: 70%;
+
+
+}
+
+
+#footer-right-top{
+    padding:32px;
+}
+#footer-right-top .footer-row  div > a{
+    text-align: center;
+    color:white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    line-height: 1.5em;;
+    font-size: 24px;
+}
+
+.sub-categories  a {
+    color:white!important;
+    text-transform: capitalize!important;
+    font-weight: bold!important;
+    font-size: 14px!important;
+}
+
+
+
+
+/* *********************** footer right bottom content ********************/
+#footer-right-bottom {
+    /* background-color: orange; */
+    height: 30%;
+
+
+}
+
+
+/* #footer-right-left-bottom{
+    background-color: green;
+    
+} */
+
+#footer-right-bottom .footer-bottom-row img{
+    margin-left: 8px;
+}
+
+#footer-right-bottom .footer-bottom-row p {
+    float:right;
+    padding:16px;
+    color: white;
+}
+
+
+
+
+/* **************** footer base ********** */
+.footer-base{
+    /* height: 60px; */
+    background-color: #483131;
+}
+.footer-base h4 {
+    text-align: center;
+    color: white;
+    padding: 8px;
+}
+
+
+
+@media only screen and (max-width:922px) {
+    .footer-content {
+        display: block;
+    }
+
+    #right-footer-content,
+    #right-footer-content>div {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:768px){
+    #left-footer-content{
+        width: 100%;
+    }
+
+    .footer-logo{
+        background-size: 120px;
+        height: 120px;
+    }
+
+    #footer-right-top .footer-row div >  a{
+        font-size: 19px;
+    }
+}

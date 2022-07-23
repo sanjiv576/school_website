@@ -456,7 +456,7 @@ section .row>.col {
 
 .vision_card,
 .philosophy_card,
-.mission_card, .right-icons, .left-icons {
+.mission_card {
 
     background-repeat: no-repeat;
     background-size: 100px;
@@ -464,6 +464,16 @@ section .row>.col {
     transition: transform 0.4s;
     cursor: pointer;
     border-radius: 8px;
+}
+
+.right-icons, .left-icons {
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    transition: transform 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 300px;
 }
 
 .vision_card:hover,
@@ -529,7 +539,7 @@ section .row>.col {
 
 .middle-part{
     /* background-color: green; */
-    height: 800px;
+    /* height: 800px; */
     margin-top: 8px;
     padding: 8px;
     display: flex;
@@ -549,6 +559,7 @@ section .row>.col {
     background-size: cover;
     background-position-x: center;
 
+    height: 800px;
 }
 
 /* #right-content{
@@ -571,7 +582,7 @@ section .row>.col {
 
 #right-bottom{
     background-color: white;
-    height: 30%;
+    height: 240px;
     display: flex;
     
 }
