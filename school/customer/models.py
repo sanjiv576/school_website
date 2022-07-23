@@ -1,8 +1,6 @@
 from django.db import models
 from authenticate.models import UserInfo
-import datetime
 
-from customer.views import appointment
 
 
 # model for notice and vacancy
