@@ -6,7 +6,7 @@
 
 {% load static %}
 
-
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/custom/homepage.css' %}">
 <!-- for image sliders -->
 
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -27,6 +27,7 @@
       <div class="progress-bar" id="myBar"></div>
     </div>
 
+    <!-- for messasges -->
     <section>
       <!-- for showing success message -->
       {% if message %}
@@ -46,6 +47,7 @@
     </section>
 
 
+    <!-- slider images -->
     <section>
 
       <div id="makeCarousel" class="carousel carousel-dark slide" data-ride="carousel">
@@ -62,7 +64,7 @@
         <div class="carousel-inner">
 
           <div class="carousel-item active" data-interval="5000">
-            <img src="{% static 'images/childStudying.jpeg' %}" class="d-block w-100 h-60" alt="asf">
+            <img src="{% static 'images/home/childStudying.jpeg' %}" class="d-block w-100 h-60" alt="asf">
             <div class="carousel-caption d-none d-md-block">
 
               <h2 class="imgTitle">Nursery Student</h2>
@@ -71,8 +73,8 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="{% static 'images/1-building.jpeg' %}" class="d-block w-100 mx-auto img-fluid img-thumbnail h-60"
-              alt="school building image">
+            <img src="{% static 'images/home/1-building.jpeg' %}"
+              class="d-block w-100 mx-auto img-fluid img-thumbnail h-60" alt="school building image">
             <div class="carousel-caption d-none d-md-block">
               <!-- <marquee behavior="alternate" direction="left" scrollamount="12"><span><h2 class="imgTitle">School Building</h2></span></marquee> -->
               <span>
@@ -83,7 +85,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="{% static 'images/1-scoutTroop.JPG' %}" class="d-block w-100 h-60" alt="scout troop image">
+            <img src="{% static 'images/home/1-scoutTroop.JPG' %}" class="d-block w-100 h-60" alt="scout troop image">
             <div class="carousel-caption d-none d-md-block">
               <div class="carousel-caption trickcenter"></div>
               <!-- <h2 class="imgTitle">KEBS Scout Troop</h2>
@@ -97,7 +99,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="{% static 'images/photo1.jpeg' %}" class="d-block w-100 h-60" alt="asf">
+            <img src="{% static 'images/home/photo1.jpeg' %}" class="d-block w-100 h-60" alt="asf">
             <div class="carousel-caption d-none d-md-block">
 
               <h2 class="imgTitle">Arts Exhibition</h2>
@@ -106,7 +108,7 @@
           </div>
 
           <div class="carousel-item" data-interval="5000">
-            <img src="{% static 'images/children.jpeg' %}" class="d-block w-100 h-60" alt="asf">
+            <img src="{% static 'images/home/children.jpeg' %}" class="d-block w-100 h-60" alt="asf">
             <div class="carousel-caption d-none d-md-block">
 
               <h2 class="imgTitle">Children Day</h2>
@@ -127,7 +129,7 @@
       </div>
     </section>
 
-
+    <!-- introudction -->
     <section>
       <div class="introduction-notice">
 
@@ -138,7 +140,7 @@
                 <h2>introduction</h2>
               </div>
               <div class="img-content">
-                <img src="{% static 'images/1-building.jpeg' %}" alt="picture of KEBS school building"
+                <img src="{% static 'images/home/1-building.jpeg' %}" alt="picture of KEBS school building"
                   class="img-fluid mx-auto img-thumbnail">
               </div>
 
@@ -172,12 +174,10 @@
                     being while nurturing their full potential.</p>
                 </div>
 
-                <hr>
-
-
-                <div class="intro-content-button">
+              
+                <!-- <div class="intro-content-button">
                   <a href="#" class="btn btn-primary text-uppercase">read more</a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@
                 <!-- first notice -->
                 {% for notice_detail in notice_details %}
                 <div class="notice-body">
-                  
+
                   <div class="notice-img-content">
                     <div class="notice-img">
                       <a href=""><img class="img-fluid rounded mx-auto "
@@ -220,65 +220,84 @@
 
                     </div>
                   </div>
-                  
+
                 </div>
                 {% endfor %}
 
 
-              <!-- lower notice button -->
-              <!-- <div class="notice-button-section text-center">
+                <!-- lower notice button -->
+                <!-- <div class="notice-button-section text-center">
                 <a href="#" class="btn btn-primary text-uppercase justify-center">read more</a>
 
               </div> -->
 
 
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
-  </div>
-  </section>
+    </section>
 
 
-
-  <section>
-    <div class="row vision-philosophy-mission-content">
-
-      <div class="col-lg-4 col-sm-4 col-4 vision-philosophy-mission">sdf</div>
-      <div class="col-lg-4 col-sm-4 col-4  vision-philosophy-mission">dg</div>
-      <div class="col-lg-4 col-sm-4 col-4  vision-philosophy-mission">dfgg</div>
-      <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
-        
-        <div class="col">
-          <div class="card h-68 bg-success">
-            <div class="card-body">
-            </div>
-          </div>
+    <!-- card for mission philosophy vision -->
+    <div class="row">
+      <div class="column">
+        <div class="vision_card">
+          <p><strong>Vision</strong></p>
         </div>
-
-        <div class="col">
-          <div class="card h-100 bg-primary">
-            <div class="card-body-content">
-              thisis
-            </div>
-          </div>
+      </div>
+      <div class="column">
+        <div class="philosophy_card">
+          <p><strong>Philosophy</strong></p>
         </div>
-
-        <div class="col">
-          <div class="card h-100 bg-secondary">
-            <div class="card-body">
-            </div>
-          </div>
+      </div>
+      <div class="column">
+        <div class="mission_card">
+          <p><strong>Mission</strong></p>
         </div>
-
-      </div> -->
+      </div>
 
     </div>
-    <div class="row" style="height: 400px; background-color: pink;"></div>
-    <div class="row" style="height: 400px; background-color: red;"></div>
-    <div class="row" style="height: 400px; background-color: grey;"></div>
-  </section>
+
+    <div class="middle-part">
+      <div id="left-img" class="middle-part-content"></div>
+      <div id="right-content" class="middle-part-content">
+        
+      
+        <div id="right-top">
+
+          <!-- right content why should join -->
+          <div class="right-body-content-top"> 
+
+            <h2 class="text-center"><strong>Why should you join this school ?</strong></h2>
+  
+            <ul>
+                <li>Expand potential learning through theory along with practice. </li> <br />
+                <li>Reasonable school fee.</li> <br />
+                <li>Every year, we conduct sports and games competition.</li> <br />
+                <li>Sufficient laboratory equipment for an individual student in Science and Compter labs.
+                </li> <br />
+                <li>Well-furnished and comfortable bench and desk in a well-managed classroom.</li> <br />
+                <li>Experienced teachers in respective field teach the students.</li> <br />
+                <li>Healthy foods are provided in school's own canteen.</li> <br />
+                <li>School bus is avaialable.</li>
+            </ul>
+        </div> 
+        </div>
+        <div id="right-bottom">
+          <div class="left-icons"><p><strong>Enroll</strong></p></div>
+          <div class="right-icons"><p><strong><a href="/customer/appointment">Appointment</a></strong></p></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- for messages -->
+    <div class="messages-content">
+      <div id="principal-msg"></div>
+      <div class="founder-msg"></div>
+    </div>
 
   </div>
 
