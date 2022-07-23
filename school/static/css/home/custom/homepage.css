@@ -56,6 +56,8 @@
     #makeCarousel img {
         height: 300px !important;
     }
+
+    
 }
 
 /* responsive size of carousel images */
@@ -70,6 +72,7 @@
     .img-content img {
         height: 250px !important;
     }
+ 
 }
 
 /* for responsive Nav bar */
@@ -180,14 +183,14 @@ ul li {
 }
 
 .imgTitle {
-    border-radius: 14px;
+    border-radius: 8px;
     background-color: #413F42;
     color: white;
     display: inline-block;
 }
 
 .imgDescp {
-    border-radius: 13px;
+    border-radius: 8px;
     background-color: white;
     font-weight: bolder;
     color: black;
@@ -264,8 +267,8 @@ marquee h2 {
 } */
 
 .introduction-main-content {
-    background-color: #F4D2D2;
-    border-radius: 18px;
+    background-color: #b5a8a8;
+    border-radius: 8px;
     margin: 3% 3% 5% 3%;
     width: 94%;
     height: 96%;
@@ -289,7 +292,7 @@ marquee h2 {
 
 .intro-content {
     /* background-color: pink; */
-    border-radius: 14px;
+    border-radius: 8px;
     height: 300px;
     padding-top: 5px;
 
@@ -299,14 +302,15 @@ marquee h2 {
     background-color: #534e4e;
     color: white;
     font-size: 16px;
-    height: 200px;
+    /* height: 200px; */
     padding: 20px;
     text-align: justify;
+    border-radius: 8px;
 
-    white-space: nowrap;
+    /* white-space: nowrap;
 
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 }
 
 
@@ -336,8 +340,8 @@ marquee h2 {
 
 .notice-main-content {
     background-color: #F4D2D2;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     margin: 3% 3% 3% 3%;
     height: 96%;
 
@@ -413,7 +417,7 @@ marquee h2 {
 
 /*  vision-philosophy-mission content*/
 
-section .row > .col {
+section .row>.col {
     margin: 5% !important;
     height: 200px !important;
 }
@@ -424,33 +428,228 @@ section .row > .col {
     width: 30%;
     margin: 3.33%;
 }
-/* .vision-philosophy-mission-content {
-    display: flex !important;
-    flex-direction: column;
-    height: 300px; 
-    width: 100%;
-    background-color: green;
-}
-.vision-philosophy-mission-content > div {
-    display: flex;
-    background-color: blue;
-    width: 26.67%;
-    height: 70%;
-    margin: 5%;
-} */
 
-/* .card .card-body-content {
-    background-color: rgb(156, 21, 43);
-    height: 60%;
+
+/* *********************************** for mssion vission and aim ************************ */
+
+.column {
+    
     margin: auto;
+    width: 30%;
+    padding: 0 10px;
+    height: 200px;
+}
+
+
+
+/* Style the counter cards */
+.vision_card,
+.philosophy_card,
+.mission_card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    height: 100%;
+
+}
+
+.vision_card,
+.philosophy_card,
+.mission_card, .right-icons, .left-icons {
+
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    transition: transform 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.vision_card:hover,
+.philosophy_card:hover,
+.mission_card:hover, .right-icons:hover, .left-icons:hover {
+    background-size: 105px;
+    transform: scale(1.15);
+
+}
+
+.vision_card:hover {
+    background-color: #0d870b;
+
+}
+
+.philosophy_card:hover {
+    background-color: #1f4eab;
+
+}
+
+.mission_card:hover {
+    background-color: #45453e;
+
+}
+
+.vision_card {
+    background-image: url('../../../images/home/icons/vision.png');
+    background-color: #52EC4F;
+}
+
+.philosophy_card {
+    background-image: url('../../../images/home/icons/philosophy.png');
+    background-color: #578BF0;
+}
+
+.mission_card {
+    background-image: url('../../../images/home/icons/target.png');
+    background-color: #6C6C5F;
+}
+
+
+/* text on the icons */
+.row .column p {
+    position: relative;
+    top: 133px;
+    color: white;
+    font-size: 24px;
+
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 700px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* *********************** for middle part ************************ */
+
+.middle-part{
+    /* background-color: green; */
+    height: 800px;
+    margin-top: 8px;
+    padding: 8px;
+    display: flex;
+}
+
+.middle-part > div{
+    margin: auto;
+    width: 48%;
+    padding: 0 10px;
+    height: inherit;
+    
+}
+
+#left-img{
+    background-image: url('../../../images/home/photo1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+
+}
+
+/* #right-content{
+    background-color: red;
 } */
 
-/* .vision {
-    background-color: grey !important;
+#right-top{
+    /* background-color: grey; */
+    height: 70%;
+    padding: 8px;
+
+}
+
+#right-top ul {
+    list-style: none;
+    font-style: bold;
+}
+
+
+
+#right-bottom{
+    background-color: white;
+    height: 30%;
     display: flex;
-    flex-direction: column;
-    height: 200px;
-} */
+    
+}
+
+
+/* right bottom icons */
+
+#right-bottom > div{
+    width: 46%;
+    margin: auto;
+    height: 90%;
+    /* float: left; */
+    
+}
+
+#right-bottom p {
+    position: relative;
+    top: 164px;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+#right-bottom a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.right-icons {
+    background-image: url('../../../images/home/icons/appoinment.png');
+}
+
+.left-icons, .right-icons {
+    background-color: #2A5276;
+}
+.left-icons {
+    background-image: url('../../../images/home/icons/enroll.png');
+}
+
+.right-icons:hover{
+    background-color: #34628b;
+}
+
+@media only screen and (max-width:922px) {
+    .middle-part {
+        display: block;
+    }
+
+    .middle-part > div {
+        width: 100%;
+    }
+
+    
+}
+
+
+
+/* *********************** messages content **************************  */
+.messages-content{
+    background-color: green;
+    height: 600px;
+    padding: 8px;
+    display: flex;
+    margin-top: 16px;
+}
+
+.messages-content > div {
+    width: 40%;
+    background-color: red;
+    height: inherit;
+    margin: 8px auto auto auto;
+    
+}
+
+
+
+
 
 
 /* main body container */
@@ -461,9 +660,8 @@ section .row > .col {
 
 
 @media screen and (max-width: 426px) {
-    
+
     .card-body {
-        height: 300px!important;
+        height: 300px !important;
     }
 }
-
