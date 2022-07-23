@@ -16,5 +16,6 @@ urlpatterns = [
         path('updateNotice/<int:c_id>', views.updateNotice),
         path('deleteIntro/<int:c_id>', views.deleteIntro),
         path('deleteNotice/<int:c_id>', views.deleteNotice),
+        path('sortViewCustomer/<str:sortedBy>', views.sortViewCustomer),
 
 ]
