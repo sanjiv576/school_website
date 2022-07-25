@@ -9,10 +9,6 @@ def index(request):
     return render(request, 'home/homepage.html', {'notice_details': notice_details})
 
 
-# def register(request):
-#     return render(request, 'authenticate/register.html')
-
-
 def home(request):
     
     notice_details = Notice_Vacancy.objects.all()
