@@ -13,22 +13,16 @@ from django.contrib.auth.models import User
 
 def login_page(request):
     
-    # print("hello, checking validation")
-    # print(request.method)
     # message = None
     if(request.method == 'POST'):
         error_msg = None
-
-        
+      
         role = request.POST['form-select']
         # user = authenticate(request, username=username, password=password)
         user = authenticate(request,
                 username=request.POST['username'],
                 password = request.POST['password']
                 )
-
-        print(user)
-        print("HEllo heloo")
 
         # if there is valid/registered account, then, login
         if(user is not None):
@@ -64,13 +58,9 @@ def register_page(request):
 
         # now, getting each data from each field
         first_name = request.POST.get('firstName')
-        middle_name = request.POST.get('middleName')
-
-        
+        middle_name = request.POST.get('middleName')      
         last_name = request.POST.get('lastName')
-        contact = request.POST.get('contact')
-
-        
+        contact = request.POST.get('contact')      
         role = request.POST.get('role')
         username = request.POST.get('username')
 
@@ -79,12 +69,10 @@ def register_page(request):
                 
         form = UserForm(request.POST, request.FILES)
 
-
         # validation
         
         error_msg = None
         
-
         # check provied contact detail is number/digit or not
         try:
             for digit in contact:
@@ -138,8 +126,7 @@ def register_page(request):
                 username = username,
                 password = password
                 )
-
-                
+  
                 login_msg = first_name + ", your account has been created successfully. Now login."
                 print(login_msg)
 
@@ -148,7 +135,6 @@ def register_page(request):
             else : 
                 return render(request, "authenticate/register.html", {'error': error_msg})
 
-
     return render(request, "authenticate/register.html")
 
 
@@ -156,7 +142,7 @@ def logout_func(request):
     # loggin out the user
     logout(request)
 
-    login_msg = "You are loged out."
+    login_msg = "You are loged out successfully."
 
     print("User log out")
-    return redirect("/home/home", {'message': login_msg})
+    return render(request, "home/homepage.html", {'message': login_msg})

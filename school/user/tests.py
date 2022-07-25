@@ -3,7 +3,6 @@ from urllib import response
 from django.urls import reverse, resolve
 from django.test import TestCase, SimpleTestCase, Client
 
-
 # for url testing
 from user.views import addNotice, addIntro, editNotice, editIntro, deleteIntro, deleteNotice
 
@@ -18,18 +17,14 @@ class TestUrls(SimpleTestCase):
         # reverse --> finds url
         url = reverse(addNotice)
         
-
         # resolve --> helps to get the function of that url 
 
         self.assertEquals(resolve(url).func, addNotice)
 
-    
     # testing url of addIntor which creates introduction
     def test_create_intro_urls(self):
         url = reverse(addIntro)
         self.assertEquals(resolve(url).func, addIntro)
-
-    
 
     # testing url of edit code of editNotice
     def test_edit_notice_urls(self):
@@ -41,8 +36,6 @@ class TestUrls(SimpleTestCase):
     def test_edit_intro_urls(self):
         url = reverse(editIntro, args='1')
         self.assertEquals(resolve(url).func, editIntro)
-
-
 
 
 # testing delete function

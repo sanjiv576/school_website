@@ -73,8 +73,6 @@ def addNotice(request):
         ).save()
         print(saving)
 
-        
-
         success_msg = "Your post has been successfully published ."
 
         return render(request, "user/adminDashboard.html", {'messages': success_msg})
@@ -101,24 +99,17 @@ def addIntro(request):
         # intro_image = request.POST.get('intro_image', False)
         intro_description = request.POST['intro_desc']
         
-        
-
         Intro(
             intro_title = intro_title,
             # intro_image = intro_image,
             intro_description = intro_description,
             
-
         ).save()
-
-        
 
         success_msg = "Introduction section has been successfully published ."
 
         return render(request, "user/adminDashboard.html", {'messages': success_msg})
     return render(request, 'user/addIntro.html')
-
-
 
 # for editing logic
 
@@ -135,8 +126,6 @@ def editIntro(request, c_id):
     data = Intro.objects.get(intro_id=c_id)
     print(data)
     return render(request, "user/editIntro.html", {'data': data})
-
-
 
 # for updating logic
 
@@ -214,8 +203,6 @@ def deleteNotice(request, c_id):
     return render(request, "user/adminDashboard.html", {'messages': success_msg})
 
     
-
-
 # sorting logic 
 
 def sortViewCustomer(request, sortedBy):

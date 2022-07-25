@@ -19,8 +19,8 @@ class testViews(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/homepage.html')
 
-    
-    # testing create, this fails
+        
+    # testing create
     def test_create_user(self):
         user = User.objects.create(username="testing")
         user.set_password('1234567')
