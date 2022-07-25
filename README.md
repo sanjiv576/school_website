@@ -1,5 +1,5 @@
 
-# Kotha Khojau
+# Digital School System
 > STW205CDE-Developing the Modern Web
 > - Individual Project
 
